@@ -1,5 +1,38 @@
 {
-  "name": "SomeTrails",
+  "name": "sometrails",
   "private": true,
-  "dependencies": {}
+  "description": "Welcome to someTrails!",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonBerzon/someTrails.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonBerzon/someTrails/issues"
+  },
+  "homepage": "https://github.com/JonBerzon/someTrails#readme",
+  "dependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^5.3.0",
+    "redux": "^4.1.1",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1"
+  }
 }
