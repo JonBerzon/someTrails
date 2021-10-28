@@ -16,15 +16,12 @@ class Api::UsersController < ApplicationController
 
     def update
         @user = User.find(params[:id])
-        if @user == current_user
-            if @user.update(user_params)
-                render :show
-            else
-                @user.errors.full_messages, status: 401
-            end
+        
+        if @user.update(user_params)
+            render :show
         else
-            render json: ['Could not locate user'], status: 400
-        end
+            render json: @user.errors.full_messages, status: 401
+        end 
     end
 
     private
