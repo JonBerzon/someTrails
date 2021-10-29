@@ -4,8 +4,9 @@ import Navbar from "./navbar/navbar";
 import Searchbar from "./searchbar/searchbar";
 import { Switch } from "react-router-dom";
 import Splash from "./splash/splash";
-import Signup from "./signup/signup_container";
+import SignupContainer from "./signup/signup_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import LoginContainer from "./login/login_container";
 
 
 const App = () => (
@@ -14,7 +15,9 @@ const App = () => (
         <Navbar />
         <Switch>
             
-            <AuthRoute path="/signup" component={Signup} />
+            <AuthRoute path="/signup" component={SignupContainer} />
+            <AuthRoute path="/login" component={LoginContainer} />
+
             <Route path="/" component={Splash} />
 
 

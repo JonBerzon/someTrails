@@ -10,6 +10,10 @@ class Signup extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    componentDidMount(){
+        this.props.clearErrors()
+    }
+
     handleChange(type){
         return e => {
             this.setState({[type]: e.currentTarget.value})
@@ -31,35 +35,46 @@ class Signup extends React.Component{
                 <div className="signup-background-img">
                 <div className="signup-div">
                     <h1>Create your free account</h1>
-                    <form className="form-div" onSubmit={this.handleSubmit} >
-                        <div className="fake-input">
-                            <input 
-                                className={errors.includes("Fname can't be blank") ? "signup-field red" : "signup-field"}
-                                type="text" 
+                        <form className="form-div" onSubmit={this.handleSubmit} >
+                        <div className={errors.includes("Fname can't be blank") ? "fake-input red" : "fake-input"}>
+                            <input className="signup-field"
+                                type="search" 
                                 placeholder="First name" 
                                 value={this.state.fname}
                                 onChange={this.handleChange("fname")}
-                                />
+                                />   
                         </div>
-                        <div className="fake-input">
+                        <p className="signup-error-text">
+                            {errors.includes("Fname can't be blank") ? "Enter your first name." : ""}
+                        </p>
+                        <div className={errors.includes("Lname can't be blank") ? "fake-input red" : "fake-input"}>
                             <input 
                                 className="signup-field" 
-                                type="text" 
+                                type="search" 
                                 placeholder="Last name"
                                 value={this.state.lname}
                                 onChange={this.handleChange("lname")}
                                 />
                         </div>
-                        <div className="fake-input">
+                            <p className="signup-error-text">
+                                {errors.includes("Lname can't be blank") ? "Enter your last name." : ""}
+                            </p>
+                        <div className={errors.includes("Email can't be blank") || errors.includes("Email has already been taken") ? "fake-input red" : "fake-input"}>
                             <input 
                                 className="signup-field" 
-                                type="text" 
+                                type="search" 
                                 placeholder="Email"
                                 value={this.state.email}
                                 onChange={this.handleChange("email")}
                                 />
                         </div>
-                        <div className="fake-input">
+                            <p className="signup-error-text">
+                                {errors.includes("Email can't be blank") ? "Email is not valid." : ""}
+                            </p>
+                            <p className="signup-error-text">
+                                {errors.includes("Email has already been taken") ? "Email is already in use." : ""}
+                            </p>
+                        <div className={errors.includes("Password is too short (minimum is 6 characters)") ? "fake-input red" : "fake-input"}>
                             <input 
                                 className="signup-field" 
                                 type="password" 
@@ -68,16 +83,20 @@ class Signup extends React.Component{
                                 onChange={this.handleChange("password")}
                                 />
                         </div>
+                            <p className="signup-error-text">
+                                {errors.includes("Password is too short (minimum is 6 characters)") ? "Password must be 6 characters long." : ""}
+                            </p>
                         <input 
+                            className="sign-up-page-submit"
                             type="submit" 
                             value="Sign up" 
                             />
                         <p className="have-acc">
-                            Already have an account? &nbsp;
-                            <Link className="green-signup" to="/login">Log in</Link>
+                            Already have an account?&nbsp;
+                            <Link className="green-signup" to="/login">Login</Link>
                         </p>
                     <p className="demo-log">
-                            Just here to look? Log in as a &nbsp;
+                            Just here to look? Log in as a&nbsp;
                             <Link to="/" className="green-signup">demo user</Link>
                     </p>
 

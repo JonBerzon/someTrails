@@ -23,8 +23,7 @@ class Navbar extends React.Component{
                 </Link>
                 <div className="session-div">
                     <Link className="signup-button" to="/signup">Sign Up</Link>
-                    {/* <a className="signup-button" href="#">Sign Up</a> */}
-                    <a className="login-button" href="#">Log In</a>
+                    <Link className="login-button" to="/login">Login</Link>
                 </div>
             </div>
         )
