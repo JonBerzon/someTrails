@@ -15,12 +15,15 @@ class Navbar extends React.Component{
                     
 
                 </div>
-                <div className="logo-div">
-                    <img src={logo} />
-                    <p className="nav-title">SomeTrails</p>
-                </div>
+                <Link className="nav-link-home" to ="/">
+                    <div className="logo-div">
+                        <img src={logo} />
+                        <p className="nav-title">SomeTrails</p>
+                    </div>
+                </Link>
                 <div className="session-div">
-                    <a className="signup-button" href="#">Sign Up</a>
+                    <Link className="signup-button" to="/signup">Sign Up</Link>
+                    {/* <a className="signup-button" href="#">Sign Up</a> */}
                     <a className="login-button" href="#">Log In</a>
                 </div>
             </div>
