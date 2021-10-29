@@ -248,25 +248,7 @@ input:focus {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 700px){
-     .fake-searchbar{
-     width: 97%;
- }
 
- .searchbar{
-     width: 70%;
-
-
- }
-
-}
-
-@media only screen and (max-width: 576px){
-    .splash-text{
-        top: 12%;
-        text-align: center;
-    }
-}
 
 .nav-link-home{
     text-decoration: none;
@@ -396,11 +378,7 @@ input:focus {
     border: 2px solid red;
 }
 
-@media only screen and (max-width: 566px){
-    .left-div{
-        width: 25%;
-    }
-}
+
 
 .sign-up-page-submit{
     width: 432px;
@@ -443,3 +421,88 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
+
+.splash-stats-div{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1240px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.splash-stats{
+    text-align: center;
+    font-family: Proxima Nova,Arial,sans-serif;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    
+}
+
+.splash-stats > h1{
+    color: #428A13;
+    font-size: 84px;
+    font-weight: 700;
+    letter-spacing: -3px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    margin-top: 20px;
+    
+    
+}
+.splash-stats > h2{
+    color: #428A13;
+    font-size: 24px;
+    font-weight: 700;
+    /* letter-spacing: -3px; */
+    font-family: Proxima Nova,Arial,sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.splash-stats > p{
+    color: #414141;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* .splash-stats > h1{
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-weight: 700;
+    color: #428a13;
+    margin-bottom: 8px;
+    font-size: 84px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: .86;
+    letter-spacing: -1px;
+    white-space: nowrap;
+} */
+/* @media only screen and (max-width: 834px){
+    .splash-stats-div{
+        flex-direction: column;
+        align-items: center;
+    }
+} */
+@media only screen and (max-width: 700px){
+     .fake-searchbar{
+     width: 97%;
+ }
+
+ .searchbar{
+     width: 70%;
+ }
+}
+
+@media only screen and (max-width: 576px){
+    .splash-text{
+        top: 12%;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 566px){
+    .left-div{
+        width: 20%;
+    }
+}
+
