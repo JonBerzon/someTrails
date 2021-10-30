@@ -38,9 +38,15 @@ class Splash extends React.Component{
                     <h1 className="splash-bottom-h1">Explore with</h1>
                     <h2 className="splash-bottom-h2">confidence</h2>
                     <p className="splash-bottom-p">Inspiration and guidance for wherever your trail may lead.</p>
-                    <p className="rating">4.9</p>
-                    <img className="aa-award"src={award} alt="" />
-                    <img className="gstar"src={star} alt="" />
+                    <div className="bottom-splash-award">
+                        <div>
+                            <img className="aa-award"src={award} alt="" />
+                        </div>
+                        <p className="rating">4.9</p>
+                        <div>
+                            <img className="gstar"src={star} alt="" />
+                        </div>
+                    </div>
 
 
                     <picture className="splash-bottom-pic">

@@ -7,6 +7,7 @@ import Splash from "./splash/splash";
 import SignupContainer from "./signup/signup_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import LoginContainer from "./login/login_container";
+import Footer from "./footer/footer";
 
 
 const App = () => (
@@ -14,18 +15,15 @@ const App = () => (
         
         <Navbar />
         <Switch>
-            
             <AuthRoute path="/signup" component={SignupContainer} />
             <AuthRoute path="/login" component={LoginContainer} />
-
             <Route path="/" component={Splash} />
-
-
-
         </Switch>
         {/* <Searchbar /> */}
         {/* <Route path="/" Component={Searchbar} /> */}
+        <Footer />
     </div>
+
 
 )
 

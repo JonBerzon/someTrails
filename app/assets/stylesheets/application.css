@@ -82,6 +82,17 @@ table {
      
  }
 
+ .footer-logo{
+     height: 60px;
+     width: auto;
+ }
+
+ .footer-title{
+     font-family: Montserrat, Arial, sans-serif;
+     font-size: 32px;
+     color: rgb(123, 122, 122);
+ }
+
  .splash-text{
      position: absolute;
      z-index: 10;
@@ -266,29 +277,46 @@ table {
 }
 
 .aa-award{
-    position: absolute;
-    z-index: 3;
+    /* position: absolute; */
+    /* z-index: 3;
     left: 15%;
-    top: 58%;
+    top: 58%; */
+    
 }
 
 .gstar{
-    position: absolute;
-    z-index: 3;
+    /* position: absolute; */
+    /* z-index: 3;
     top: 62%;
-    left: 28%;
+    left: 28%; */
+    margin-top: 30px;
+
 }
 
 .rating{
-    top: 62%;
-    left: 25.5%;
-    position: absolute;
+    /* top: 62%;
+    left: 25.5%; */
+    /* position: absolute; */
     color: white;
-    z-index: 3;
+    /* z-index: 3; */
     font-size: 24px;
     font-family: Proxima Nova,Arial,sans-serif;
     font-weight: bold;
+    margin-right: 20px;
+    margin-top: 30px;
 
+
+}
+
+.bottom-splash-award{
+    position: absolute;
+    top: 62%;
+    left: 15%;
+    z-index: 3;
+    display: flex;
+    /* height: 100px; */
+    /* align-items: center; */
+    
 }
 
 
@@ -464,7 +492,6 @@ input:focus {
   display: flex;
   justify-content: center;
   margin-top: 10px;
-
 }
 
 .signup-error-text{
@@ -600,15 +627,74 @@ input[type="search"]::-webkit-search-results-decoration {
  }
 }
 
-@media only screen and (max-width: 576px){
+@media only screen and (max-width: 591px){
     .splash-text{
         top: 12%;
         text-align: center;
     }
 }
-@media only screen and (max-width: 566px){
+@media only screen and (max-width: 572px){
     .left-div{
         width: 20%;
     }
 }
 
+@media only screen and (max-width: 680px){
+    .splash-bottom-h1{
+        font-size: 60px;
+        top: 2%;
+        left: 10%;
+    }
+    .splash-bottom-h2{
+        font-size: 60px;
+        top:12%;
+        left: 10%;
+
+    }
+    .splash-bottom-p{
+        top: 23%;
+        left: 10%;
+    }
+
+    .bottom-splash-award{
+        top: 30%;
+        left: 4%;
+    }
+}
+
+.footer{
+    height: 100px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 30px; */
+    /* display: block; */
+}
+
+.footer-flex{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.left-footer{
+    display: flex;
+    align-items: center;
+}
+
+.angel-logo{
+    height: 30px;
+    width: auto;
+}
+
+.linked-logo{
+    height: 30px;
+    width: auto;
+}
+
+.right-footer > a{
+    margin-left: 15px;
+}
