@@ -194,6 +194,112 @@ table {
   background-position: 50% 50%;
 
 }
+
+.bottom-splash-background{
+    width: 100%;
+    height: 580px;
+    background-image: url("bottom-splash-1");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    mask-image: radial-gradient(circle at 47% 65%,hsla(0,0%,100%,0),rgba(0,0,0,.99) 65%); 
+    /* -webkit-mask:radial-gradient(circle at 20% 40%, transparent , rgb(0, 0, 0) 50%);
+    mask:radial-gradient(circle at 20% 40%, transparent , rgb(0, 0, 0) 50%); */
+  /* box-shadow: radial-gradient(circle at 47% 65%,hsla(0,0%,100%,0),rgba(0,0,0,.9) 65%); */
+
+}
+
+.splash-bottom-div{
+    top: 15px;
+    height: 725px;
+    width: 100%;
+    position: relative;
+
+}
+
+.splash-bottom-img{
+    /* margin-top: 10px; */
+     width: 100%;
+    height: 100%;
+    object-position: 50% 50%;
+    object-fit: cover;
+    /* position: absolute; */
+
+}
+
+.splash-bottom-h1{
+    position: absolute;
+    color: white;
+    font-size: 96px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    z-index: 3;
+    left: 16%;
+    top: 20%;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+.splash-bottom-h2{
+    position: absolute;
+    color: #F5D24B;
+    font-size: 96px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    z-index: 3;
+    left: 16%;
+    top: 34%;
+    font-weight: 700;
+    letter-spacing: -1px;  
+}
+
+.splash-bottom-p{
+    top: 50%;
+    left: 16.5%;
+    position: absolute;
+    color: white;
+    z-index: 3;
+    font-size: 18px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    width: 320px;
+    font-weight: 400;
+    line-height: 26px;
+
+
+}
+
+.aa-award{
+    position: absolute;
+    z-index: 3;
+    left: 15%;
+    top: 58%;
+}
+
+.gstar{
+    position: absolute;
+    z-index: 3;
+    top: 62%;
+    left: 28%;
+}
+
+.rating{
+    top: 62%;
+    left: 25.5%;
+    position: absolute;
+    color: white;
+    z-index: 3;
+    font-size: 24px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-weight: bold;
+
+}
+
+
+.splash-bottom-pic::after{
+    background: radial-gradient(circle at 47% 65%,hsla(0,0%,100%,0),rgba(0, 0, 0, .9) 60%);
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
  
 input:focus {
     outline: none;
