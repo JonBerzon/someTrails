@@ -7,6 +7,8 @@ class Login extends React.Component{
         this.state = props.user
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.loginDemo = this.loginDemo.bind(this)
+        // debugger
     }
     componentDidMount() {
         this.props.clearErrors()
@@ -25,6 +27,14 @@ class Login extends React.Component{
         this.props.errors == [] ? this.props.history.push("/") : null
 
 
+    }
+
+    loginDemo() {
+        let demo = ({
+            email: "demo@gmail.com",
+            password: "password"
+        })
+        this.props.login(demo)
     }
 
     render(){
@@ -77,7 +87,7 @@ class Login extends React.Component{
                             </p>
                             <p className="demo-log">
                                 Just here to look? Log in as a&nbsp;
-                                <Link to="/" className="green-signup">demo user</Link>
+                                <span onClick={this.loginDemo} className="green-signup">demo user</span>
                             </p>
                     </div>
                 </div>

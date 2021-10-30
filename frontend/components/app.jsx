@@ -8,12 +8,13 @@ import SignupContainer from "./signup/signup_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import LoginContainer from "./login/login_container";
 import Footer from "./footer/footer";
+import NavbarContainer from "./navbar/navbar_container";
 
 
 const App = () => (
     <div>
         
-        <Navbar />
+        <NavbarContainer />
         <Switch>
             <AuthRoute path="/signup" component={SignupContainer} />
             <AuthRoute path="/login" component={LoginContainer} />
