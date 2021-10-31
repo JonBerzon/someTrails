@@ -14,53 +14,12 @@
  *= require_self
  */
 
- html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 
-*{
-    font-family: Proxima Nova,Arial,sans-serif
-}
+@import "base/reset.scss";
+
+// *{
+//     font-family: Proxima Nova,Arial,sans-serif
+// }
 
  .navbar-div{
      display: flex;
@@ -75,8 +34,9 @@ table {
  }
 
  .nav-title{
-     /* font-family: Proxima Nova,Arial,sans-serif; */
-     font-family: Montserrat, Arial, sans-serif;
+     font-family: Proxima Nova,Arial,sans-serif; 
+    //  font-family: Montserrat, Arial, sans-serif;
+    // font-family: Arial, Helvetica, sans-serif;
      font-size: 28px;
      color: rgb(123, 122, 122);
      
@@ -225,9 +185,7 @@ table {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     mask-image: radial-gradient(circle at 47% 65%,hsla(0,0%,100%,0),rgba(0,0,0,.99) 65%); 
-    /* -webkit-mask:radial-gradient(circle at 20% 40%, transparent , rgb(0, 0, 0) 50%);
-    mask:radial-gradient(circle at 20% 40%, transparent , rgb(0, 0, 0) 50%); */
-  /* box-shadow: radial-gradient(circle at 47% 65%,hsla(0,0%,100%,0),rgba(0,0,0,.9) 65%); */
+    
 
 }
 
@@ -333,7 +291,7 @@ table {
 
 
 .splash-bottom-pic::after{
-    background: radial-gradient(circle at 47% 65%,hsla(0,0%,100%,0),rgba(0, 0, 0, .9) 60%);
+    background: radial-gradient(circle at 47% 65%,hsla(0,0%,100%,0),rgba(0, 0, 0, .9) 60%); 
     position: absolute;
     content: "";
     width: 100%;
@@ -413,7 +371,8 @@ input:focus {
     width: 480px;
     margin-top: 80px;
     border-radius: 16px;
-    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 24%), 0 0 8px 0 rgb(0 0 0 / 8%);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .24), 0 0 8px 0 rgba(0, 0, 0, .08); 
+
     font-family: Proxima Nova,Arial,sans-serif;
 
 }
@@ -434,7 +393,7 @@ input:focus {
     width: 480px;
     margin-top: 80px;
     border-radius: 16px;
-    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 24%), 0 0 8px 0 rgb(0 0 0 / 8%);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .24), 0 0 8px 0 rgba(0, 0, 0, .08);
     font-family: Proxima Nova,Arial,sans-serif;
 
 }
@@ -473,6 +432,7 @@ input:focus {
 }
 
 
+
 .fake-input{
     width: 432px;
     height: 47px;
@@ -487,7 +447,10 @@ input:focus {
 }
 .fake-input:hover{
     border: 1px solid green;
+}
 
+.signup-field:focus .fake-input{
+    border: 2px solid green;
 }
 
 
@@ -540,7 +503,6 @@ input:focus {
     background-color: #428A13;
     border: 0px solid;
     cursor: pointer;
-
 }
 
 .sign-up-page-submit:hover{
@@ -733,7 +695,7 @@ input[type="search"]::-webkit-search-results-decoration {
     position: absolute;
     right: 20px;
     border-radius: 8px;
-    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 24%), 0 0 8px 0 rgb(0 0 0 / 8%);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .24), 0 0 8px 0 rgba(0, 0, 0, .08);
 
 }
 

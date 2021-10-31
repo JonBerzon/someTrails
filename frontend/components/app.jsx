@@ -20,8 +20,6 @@ const App = () => (
             <AuthRoute path="/login" component={LoginContainer} />
             <Route path="/" component={Splash} />
         </Switch>
-        {/* <Searchbar /> */}
-        {/* <Route path="/" Component={Searchbar} /> */}
         <Footer />
     </div>
 

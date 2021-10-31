@@ -25,8 +25,6 @@ class Login extends React.Component{
         this.props.login(this.state)
         console.log(this.props.errors)
         this.props.errors == [] ? this.props.history.push("/") : null
-
-
     }
 
     loginDemo() {
@@ -69,7 +67,6 @@ class Login extends React.Component{
                             <p className="signup-error-text">
                                 {errors.includes("Wrong credentials entered! Please try again.") ? "Invalid email or password." : ""}
                             </p>
-                            
                             <input
                                 className="sign-up-page-submit"
                                 type="submit"
