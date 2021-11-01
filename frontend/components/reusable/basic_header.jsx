@@ -7,15 +7,16 @@ class BasicHeader extends React.Component{
     }
 
     render(){
+        const {arr} = this.props
         return (
             <div>
                 <div className="basic-header-div">
                     <div className="basic-header-flex-left">
                         {
-                            this.props.arr.map((ele, index) => {
+                            arr.map((ele, index) => {
                                 return <div key={ele} className="basic-header-flex-left">
                                     <div>{ele}</div>
-                                    <div>{index < this.props.arr.length - 1 ? '>' : ""}</div>
+                                    <div>{index < arr.length - 1 ? '>' : ""}</div>
                                 </div>
                             })
                         }

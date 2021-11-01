@@ -9,8 +9,7 @@ class Profile extends React.Component{
             currentProfile: null,
             active: "profile"
         }
-        this.setFocus = this.setFocus.bind(this)
-        
+        this.setFocus = this.setFocus.bind(this)    
     }
 
     componentDidMount(){
@@ -23,16 +22,12 @@ class Profile extends React.Component{
                 currentProfile: this.props.currentProfile
             })
         }
-        // debugger
     }
-
-   
 
     setFocus(type){
         this.setState({
             active: type
         })
-
     }
 
     render(){
@@ -69,13 +64,10 @@ class Profile extends React.Component{
                             <div className="profile-tab-outerframe">
                                 <div className="profile-tab-frame">
                                     <img src={human}/>
-                                </div>
-                                
+                                </div>          
                             </div>
                             <h1>Member Since</h1>
-                            <p>{currentProfile ? currentProfile.created_at.slice(0, 4) : ""}</p>
-
-                            
+                            <p>{currentProfile ? currentProfile.created_at.slice(0, 4) : ""}</p>                            
                         </div>
                         <div className="profile-tab-user-info">
                             <h1>{currentProfile ? currentProfile.fname +" "+ currentProfile.lname: ""}</h1>
@@ -87,7 +79,6 @@ class Profile extends React.Component{
                             <h4>Favorite Activities</h4>
                         </div>
                     </div>
-
                 </div>
             </div>
         )

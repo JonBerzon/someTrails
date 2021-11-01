@@ -19,7 +19,6 @@ class Searchbar extends React.Component{
                         <div className="arrow-circle-div">
                             <div className="arrow-div"></div>
                         </div>
-                        
                     </div>
                     <input className="searchbar" type="text" placeholder="Search by city, park, or trail name"/>
                     <div className="searchbar-background"></div>

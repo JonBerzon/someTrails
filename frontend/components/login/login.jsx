@@ -36,7 +36,8 @@ class Login extends React.Component{
     }
 
     render(){
-        const { errors } = this.props
+        let { errors } = this.props
+        let {email, password} = this.state
         return(
             <div>
                 <div className="signup-background-img">
@@ -48,7 +49,7 @@ class Login extends React.Component{
                                     className="signup-field"
                                     type="search"
                                     placeholder="Email"
-                                    value={this.state.email}
+                                    value={email}
                                     onChange={this.handleChange("email")}
                                 />
                             </div>
@@ -60,7 +61,7 @@ class Login extends React.Component{
                                     className="signup-field"
                                     type="password"
                                     placeholder="Password"
-                                    value={this.state.password}
+                                    value={password}
                                     onChange={this.handleChange("password")}
                                 />
                             </div>

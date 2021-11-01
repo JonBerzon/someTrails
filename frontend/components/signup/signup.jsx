@@ -40,6 +40,7 @@ class Signup extends React.Component{
 
     render(){
         const { errors } = this.props
+        const {lname, fname, email, password} = this.state
         return(
             <div>
                 <div className="signup-background-img">
@@ -50,7 +51,7 @@ class Signup extends React.Component{
                             <input className="signup-field"
                                 type="search" 
                                 placeholder="First name" 
-                                value={this.state.fname}
+                                value={fname}
                                 onChange={this.handleChange("fname")}
                                 />   
                         </div>
@@ -62,7 +63,7 @@ class Signup extends React.Component{
                                 className="signup-field" 
                                 type="search" 
                                 placeholder="Last name"
-                                value={this.state.lname}
+                                value={lname}
                                 onChange={this.handleChange("lname")}
                                 />
                         </div>
@@ -74,7 +75,7 @@ class Signup extends React.Component{
                                 className="signup-field" 
                                 type="search" 
                                 placeholder="Email"
-                                value={this.state.email}
+                                value={email}
                                 onChange={this.handleChange("email")}
                                 />
                         </div>
@@ -89,7 +90,7 @@ class Signup extends React.Component{
                                 className="signup-field" 
                                 type="password" 
                                 placeholder="Password" 
-                                value={this.state.password}
+                                value={password}
                                 onChange={this.handleChange("password")}
                                 />
                         </div>

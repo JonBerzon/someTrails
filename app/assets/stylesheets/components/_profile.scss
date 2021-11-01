@@ -165,11 +165,15 @@ hr{
         margin-top: 10px;
         font-size: 13px;
         font-weight: 700;
+    }    
+}
+
+@media only screen and (max-width: 930px){
+    .profile-tab{
+        width: 97%;
     }
 
-    // hr{
-    //     flex-grow: 1;
-    // }
-    
-    
+    .profile-sub-header{
+        margin-left: 2%;
+    }
 }
