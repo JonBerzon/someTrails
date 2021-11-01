@@ -1,0 +1,65 @@
+@import "../../base/fonts.scss";
+
+.parent-icon-div:hover .icon-dropdown{
+    visibility: visible;
+}
+
+.flex-user-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p{
+        margin-left: 10px; 
+        font-family: $rubik;
+        color: #646255;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+}
+
+.user-icon-circle{
+    height: 40px;
+    width: 40px;
+    background-color:  #ebebeb;
+    border-radius: 50%;
+    position: relative;
+}
+.user-icon{
+    height: 20px;
+    width: auto;
+    margin-right: 10px;
+    position: absolute;
+    top: 25%;
+    left: 26%;
+}
+
+.icon-dropdown{
+    height: 110px;
+    width: 170px;
+    background: white;
+    position: absolute;
+    right: 10px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .24), 0 0 8px 0 rgba(0, 0, 0, .08);
+}
+
+.icon-dropdown{
+    font-size: 14px;
+    font-family: $proxima;
+    color: #767676;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    visibility: hidden;
+}
+.icon-dropdown > li{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 5px;
+    cursor: pointer;   
+}
+
+.icon-dropdown >li:hover{
+    background: #f2f2f2;
+}

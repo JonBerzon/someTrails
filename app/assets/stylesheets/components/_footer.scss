@@ -1,0 +1,46 @@
+@import "../base/fonts.scss";
+
+.footer-logo{
+     height: 60px;
+     width: auto;
+}
+
+ .footer-title{
+     font-family: 'Rubik', sans-serif;
+     font-size: 32px;
+     color: rgb(123, 122, 122);
+}
+
+ .footer{
+    height: 160px;
+    background-color: #e6e6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.left-footer{
+    display: flex;
+    align-items: center;
+}
+
+.right-footer > a{
+    margin-left: 15px;
+}
+
+.angel-logo{
+    height: 30px;
+    width: auto;
+}
+
+.linked-logo{
+    height: 30px;
+    width: auto;
+}

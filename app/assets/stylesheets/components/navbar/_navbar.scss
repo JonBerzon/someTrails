@@ -1,0 +1,82 @@
+@import "../../base/fonts.scss";
+
+.session-div{
+     width: 185px;
+}
+
+.session1-div{
+     width: 185px;
+    display: flex;
+    justify-content: right;
+
+}
+
+.signup-button{
+    background-color: #219AD8;
+    border-radius: 8px;
+    margin-left: 8px;
+    color: white;
+    text-decoration: none;
+    font-family: $proxima;
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 13px;
+    font-weight: 500;
+
+    
+}
+
+.signup-button:hover{
+    background-color: #4bafe1;
+}
+
+.login-button{
+    background-color: white;
+    border: 2px solid #219AD8;
+    border-radius: 8px;
+    margin-left: 8px;
+    color: #219AD8;
+    text-decoration: none;
+    font-family: Proxima Nova,Arial,sans-serif;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    
+}
+
+.login-button:hover{
+    border: 2px solid #4bafe1;
+    color: #219AD8;
+
+}
+
+.navbar-div{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-top: 10px;
+}
+
+
+.navbar-left-div{
+    width: 185px;
+    height: 10px;
+}
+
+.nav-link-home{
+    text-decoration: none;
+}
+
+.logo-div{
+     display: flex;
+     align-items: center;
+}
+
+.nav-title{
+     font-family: $rubik;
+     font-size: 28px;
+     color: rgb(123, 122, 122);   
+}

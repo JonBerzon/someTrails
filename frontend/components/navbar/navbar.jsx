@@ -34,7 +34,7 @@ class Navbar extends React.Component{
         )
         return(
             <div className="navbar-div">
-                <div className="left-div">
+                <div className="navbar-left-div">
                     
 
                 </div>

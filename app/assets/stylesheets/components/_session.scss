@@ -1,0 +1,150 @@
+@import "../base/fonts.scss";
+
+
+
+.signup-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    height: 552px;
+    width: 480px;
+    margin-top: 80px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .24), 0 0 8px 0 rgba(0, 0, 0, .08); 
+    font-family: $proxima;
+
+    h1{
+        font-size: 24px;
+        color: #414141;
+        font-weight: 700;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+.signup-div-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    height: 400px;
+    width: 480px;
+    margin-top: 80px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .24), 0 0 8px 0 rgba(0, 0, 0, .08);
+    font-family: $proxima;
+
+    h1{
+        font-size: 24px;
+        color: #414141;
+        font-weight: 700;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+.signup-field{
+    border: 0px solid;
+    position: absolute;
+    top: 20%;
+    left: 3%;
+    font-size: 20px;
+    width: 400px;
+    height: 30px;
+}
+
+.signup-field::placeholder{
+    color: #b5b5b5;
+}
+
+.signup-field:focus .fake-input{
+    border: 2px solid green;
+}
+
+.green-signup{
+    text-decoration: none;
+    color: #428A13;
+    cursor: pointer;
+}
+
+
+
+.signup-error-text{
+    color:red;
+    font-size: 12px;
+}
+
+.form-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.fake-input{
+    width: 432px;
+    height: 47px;
+    border: 1px solid #b5b5b5;
+    font-family: $proxima;
+    margin: 4px 0px;
+    border-radius: 8px;
+    position: relative;
+    margin-top: 15px;
+    
+
+}
+.fake-input:hover{
+    border: 1px solid green;
+}
+
+.red {
+    border: 2px solid red;
+    
+}
+.red::placeholder{
+    color: red;
+}
+
+.red:hover{
+    border: 2px solid red;
+}
+
+.sign-up-page-submit{
+    width: 432px;
+    height: 47px;
+    font-family: $proxima;
+    margin: 4px 0px;
+    border-radius: 8px;
+    position: relative;
+    margin-top: 15px;
+    color: white;
+    background-color: #428A13;
+    border: 0px solid;
+    cursor: pointer;
+}
+
+.sign-up-page-submit:hover{
+    background-color: #69a041;
+}
+
+.have-acc{
+    margin-top: 18px;
+    font-weight: 0;
+    color:#b5b5b5;
+    text-align: center;
+    font-size: 16px;
+}
+
+.demo-log{
+    margin-top: 18px;
+    color:#b5b5b5;
+    text-align: center;
+    font-size: 16px;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
