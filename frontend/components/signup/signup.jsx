@@ -24,7 +24,6 @@ class Signup extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.signup(this.state)
-        console.log(this.props.errors)
         this.props.errors == [] ? this.props.history.push("/") : null
     }
 
