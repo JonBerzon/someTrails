@@ -1,6 +1,6 @@
 import React from "react";
 import BasicHeader from "../reusable/basic_header";
-import human from "../../../images/icons/human6.png"
+
 
 class Profile extends React.Component{
     constructor(props){
@@ -63,7 +63,7 @@ class Profile extends React.Component{
                         <div className="profile-tab-inner-flex">
                             <div className="profile-tab-outerframe">
                                 <div className="profile-tab-frame">
-                                    <img src={human}/>
+                                    <img src={window.userIcon}/>
                                 </div>          
                             </div>
                             <h1>Member Since</h1>

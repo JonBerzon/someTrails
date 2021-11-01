@@ -1,5 +1,4 @@
 import React from "react";
-import user from '../../../images/icons/human6.png';
 import { Link } from "react-router-dom";
 
 class UserDropdown extends React.Component{
@@ -17,7 +16,7 @@ class UserDropdown extends React.Component{
             <div className="parent-icon-div">
                 <div className="flex-user-icon">
                     <div className="user-icon-circle">
-                        <img className="user-icon" src={user}  />
+                        <img className="user-icon" src={window.userIcon}  />
                     </div>
                     <p>{this.props.fname}</p>
                 </div>

@@ -1,6 +1,5 @@
 import React from "react";
 
-import search from "../../../images/search-icon-white.png"
 
 class BasicSearch extends React.Component{
     constructor(props){
@@ -17,7 +16,7 @@ class BasicSearch extends React.Component{
                     />
                 </div>
                 <div className="green-search-icon">
-                    <img src={search}/>
+                    <img src={window.whiteSearch}/>
                 </div>
             </div>
         )

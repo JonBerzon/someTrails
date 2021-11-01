@@ -80,3 +80,9 @@
      font-size: 28px;
      color: rgb(123, 122, 122);   
 }
+
+@media only screen and (max-width: 572px){
+    .navbar-left-div{
+        width: 20%;
+    }
+}

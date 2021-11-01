@@ -1,11 +1,5 @@
 import React from "react";
-import NavbarContainer from "../navbar/navbar_container";
-import Navbar from "../navbar/navbar";
 import SearchbarContainer from "../searchbar/searchbar_container";
-import Searchbar from "../searchbar/searchbar";
-import background from "../../../images/background.jpg"
-import award from "../../../images/award.png"
-import star from "../../../images/gstar3.png"
 
 
 class Splash extends React.Component{
@@ -40,17 +34,17 @@ class Splash extends React.Component{
                     <p className="splash-bottom-p">Inspiration and guidance for wherever your trail may lead.</p>
                     <div className="bottom-splash-award">
                         <div>
-                            <img className="aa-award"src={award} alt="" />
+                            <img className="aa-award"src={window.award} alt="" />
                         </div>
                         <p className="rating">4.9</p>
                         <div>
-                            <img className="gstar"src={star} alt="" />
+                            <img className="gstar"src={window.stars} alt="" />
                         </div>
                     </div>
 
 
                     <picture className="splash-bottom-pic">
-                        <img className="splash-bottom-img" src={background} alt="" />
+                        <img className="splash-bottom-img" src={window.bottomSplashBackground} alt="" />
                     </picture>
                 </div>
                 

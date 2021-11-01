@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from '../../../images/logo_only.png';
 import UserDropdown from "./user_Dropdown";
 
 
@@ -40,7 +39,7 @@ class Navbar extends React.Component{
                 </div>
                 <Link className="nav-link-home" to ="/">
                     <div className="logo-div">
-                        <img src={logo} />
+                        <img src={window.logo} />
                         <p className="nav-title">SomeTrails</p>
                     </div>
                 </Link>

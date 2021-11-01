@@ -1,6 +1,4 @@
 import React from "react";
-import background from '../../../images/search-background-3.jpg';
-import searchIcon from '../../../images/search-icon.png';
 
 
 
@@ -15,7 +13,7 @@ class Searchbar extends React.Component{
                 <div className="searchbar-div">
                     <p className="splash-text">Find your next trail</p>
                     <div className="fake-searchbar">
-                        <img className="search-icon" src={searchIcon}/>
+                        <img className="search-icon" src={window.blackSearch}/>
                         <div className="arrow-circle-div">
                             <div className="arrow-div"></div>
                         </div>
