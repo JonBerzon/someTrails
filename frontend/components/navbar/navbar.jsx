@@ -9,18 +9,20 @@ class Navbar extends React.Component{
     constructor(props){
         super(props);
         this.handleLogout = this.handleLogout.bind(this)
-        // debugger
+        this.redirectProfile = this.redirectProfile.bind(this)
+
     }
 
     handleLogout(){
-        // debugger
         this.props.logout(this.props.currentUser)
-        // this.props.history.push("/")
 
     }
 
+    redirectProfile() {
+        this.props.history.push(`/profile/${this.props.currentUser}`)
+    }
+
     render(){
-        // debugger
         const icons = !this.props.currentUser ? (
             <div className="session-div">
                 <Link className="signup-button" to="/signup">Sign Up</Link>
@@ -28,8 +30,7 @@ class Navbar extends React.Component{
             </div>
         ) : (
             <div className="session1-div">
-                <UserDropdown handleLogout={this.handleLogout} />
-                {/* <img className="user-icon"src={user} handleLogout={this.handleLogout}/> */}
+                <UserDropdown handleLogout={this.handleLogout} fname={this.props.fName} redirectProfile={this.redirectProfile} />
             </div>
         )
         return(
@@ -45,10 +46,6 @@ class Navbar extends React.Component{
                     </div>
                 </Link>
                 {icons}
-                {/* <div className="session-div">
-                    <Link className="signup-button" to="/signup">Sign Up</Link>
-                    <Link className="login-button" to="/login">Login</Link>
-                </div> */}
             </div>
         )
     }

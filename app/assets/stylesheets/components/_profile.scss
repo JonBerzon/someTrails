@@ -1,0 +1,36 @@
+@import "../base/fonts.scss";
+
+hr{
+    border: none;
+    height: .5px;
+    background-color: #e8e8e8;
+}
+
+.profile-sub-header{
+    display: flex;
+    height: 50px;
+    width: 900px;
+    // align-items: center;
+    font-family: $rubik;
+    color: #414141;
+    font-size: 18px;
+    // justify-content: center;
+    margin: auto;
+
+    
+
+    h1{
+        cursor: pointer;
+        padding: 15px 0px;
+        margin: 0 15px;
+    }
+
+    h1:hover{
+        color: #69a041;
+    }
+}
+
+.sub-focused{
+    color:#428a13;
+    border-bottom: 2px solid #428a13;
+}

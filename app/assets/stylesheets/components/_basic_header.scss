@@ -1,0 +1,35 @@
+@import "../base/fonts.scss";
+
+.basic-header-flex-left{
+    display: flex;
+    font-size: 12px;
+    color: #8a8a8a;
+    align-items: center;
+    font-family: $rubik;
+
+    .basic-header-flex-left > div{
+        margin-right: 9px;
+    }
+}
+
+.basic-header-div{
+    width: 970px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 8px;
+}
+
+.smaller-hr{
+    width: 970px;
+}
+
+@media only screen and (max-width: 990px){
+    .basic-header-div{
+        width: 99%;
+    }
+
+
+}

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root"
 import { login, logout, signup } from "./actions/session_actions";
+import { fetchUsers } from "./actions/user_actions";
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,7 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
         preloadedState = {
             session: {
                 currentUserId: window.currentUser.id
+            },
+            entities: {
+                users: {
+                    [window.currentUser.id]: {
+                        id: window.currentUser.id, 
+                        email: window.currentUser.email,
+                        fname: window.currentUser.fname,
+                        lname: window.currentUser.lname
+                    }
+                } 
             }
+
         };
     }
     const store = configureStore(preloadedState)
@@ -21,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.signup = signup
     window.logout = logout
     window.login = login
+    window.fetch = fetchUsers
 
 })
 

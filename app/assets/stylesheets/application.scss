@@ -17,9 +17,11 @@
 
 @import "base/reset.scss";
 
+@import "components/*";
+
 // *{
 //     font-family: Proxima Nova,Arial,sans-serif
-// }
+// 
 
  .navbar-div{
      display: flex;
@@ -37,6 +39,7 @@
      font-family: Proxima Nova,Arial,sans-serif; 
     //  font-family: Montserrat, Arial, sans-serif;
     // font-family: Arial, Helvetica, sans-serif;
+     font-family: 'Rubik', sans-serif;
      font-size: 28px;
      color: rgb(123, 122, 122);
      
@@ -48,7 +51,8 @@
  }
 
  .footer-title{
-     font-family: Montserrat, Arial, sans-serif;
+    //  font-family: Montserrat, Arial, sans-serif;
+     font-family: 'Rubik', sans-serif;
      font-size: 32px;
      color: rgb(123, 122, 122);
  }
@@ -558,6 +562,7 @@ input[type="search"]::-webkit-search-results-decoration {
     font-weight: 700;
     letter-spacing: -3px;
     font-family: Proxima Nova,Arial,sans-serif;
+    // font-family: 'Rubik', sans-serif;
     margin-top: 20px;
     
     
@@ -680,20 +685,49 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 
-.user-icon{
+.user-icon-circle{
     height: 40px;
+    width: 40px;
+    background-color:  #ebebeb;
+    border-radius: 50%;
+    position: relative;
+
+}
+.user-icon{
+    height: 20px;
     width: auto;
     margin-right: 10px;
+    position: absolute;
+    top: 25%;
+    left: 26%;
+    
 }
+
+.flex-user-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p{
+        margin-left: 10px; 
+        font-family: 'Rubik', sans-serif;
+        color: #646255;
+        margin-right: 10px;
+        font-size: 14px;
+        
+
+    }
+}
+
 
 
 
 .icon-dropdown{
     height: 110px;
-    width: 150px;
+    width: 170px;
     background: white;
     position: absolute;
-    right: 20px;
+    right: 10px;
     border-radius: 8px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .24), 0 0 8px 0 rgba(0, 0, 0, .08);
 
