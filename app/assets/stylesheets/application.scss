@@ -22,7 +22,7 @@
 .signup-background-img{
     width: 100%;
     height: 1025px;
-    background-image: url("search-background-1.jpg");
+    background-image: url("session-background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -114,24 +114,26 @@
  .searchbar-background{
   width: 100%;
   height: 580px;
-  background-image: url("search-background-3.jpg");
+//   background-image: url("search-background-3.jpg");
+  background-image: url("test1.jpg");
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 
 }
 
-.bottom-splash-background{
-    width: 100%;
-    height: 580px;
-    background-image: url("bottom-splash-1");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    mask-image: radial-gradient(circle at 47% 65%,hsla(0,0%,100%,0),rgba(0,0,0,.99) 65%); 
+// .bottom-splash-background{
+//     width: 100%;
+//     height: 580px;
+//     background-image: url("bottom-splash-1");
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: 50% 50%;
+//     mask-image: radial-gradient(circle at 47% 65%,hsla(0,0%,100%,0),rgba(0,0,0,.99) 65%); 
     
 
-}
+// }
 
 .splash-bottom-div{
     /* top: 15px; */
@@ -143,12 +145,10 @@
 }
 
 .splash-bottom-img{
-    /* margin-top: 10px; */
     width: 100%;
     height: 100%;
     object-position: 50% 50%;
     object-fit: cover;
-    /* position: absolute; */
 
 }
 
