@@ -24,7 +24,6 @@ class Login extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state)
-        console.log(this.props.errors)
         this.props.errors == [] ? this.props.history.push("/") : null
     }
 
