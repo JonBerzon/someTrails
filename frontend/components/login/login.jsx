@@ -8,7 +8,7 @@ class Login extends React.Component{
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.loginDemo = this.loginDemo.bind(this)
-        // debugger
+
     }
     componentDidMount() {
         this.props.clearErrors()

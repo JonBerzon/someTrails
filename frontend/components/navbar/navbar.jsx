@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from '../../../images/logo_only.png';
-import user from '../../../images/icons/human.png';
 import UserDropdown from "./user_Dropdown";
 
 
