@@ -14,7 +14,6 @@ import ProfileContainer from "./profile/profile_container";
 
 const App = () => (
     <div>
-        
         <NavbarContainer />
         <Switch>
             <AuthRoute path="/signup" component={SignupContainer} />

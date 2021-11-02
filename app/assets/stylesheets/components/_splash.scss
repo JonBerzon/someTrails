@@ -72,18 +72,20 @@
         letter-spacing: -1px;  
     }
 
-    p{
-        top: 50%;
-        left: 16.5%;
-        position: absolute;
-        color: white;
-        z-index: 3;
-        font-size: 18px;
-        font-family: $proxima;
-        width: 320px;
-        font-weight: 400;
-        line-height: 26px;
-    }
+  
+}
+
+.splash-bottom-p{
+    top: 50%;
+    left: 16.5%;
+    position: absolute;
+    color: white;
+    z-index: 3;
+    font-size: 18px;
+    font-family: $proxima;
+    width: 320px;
+    font-weight: 400;
+    line-height: 26px;
 }
 
 .bottom-splash-award{
@@ -108,7 +110,8 @@
 }
 
 .splash-bottom-pic::after{
-    background: radial-gradient(circle at 47% 65%,hsla(0,0%,100%,0),rgba(0, 0, 0, .9) 60%); 
+    background: radial-gradient(circle farthest-corner at center center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, .9) 64%);
+
     position: absolute;
     content: "";
     width: 100%;
@@ -131,17 +134,21 @@
 
 
 @media only screen and (max-width: 680px){
-    .splash-bottom-h1{
-        font-size: 60px;
-        top: 2%;
-        left: 10%;
-    }
-    .splash-bottom-h2{
-        font-size: 60px;
-        top:12%;
-        left: 10%;
 
+    .splash-bottom-div{
+        h1{
+            font-size: 60px;
+            top: 2%;
+            left: 10%;
+        }
+
+        h2{
+            font-size: 60px;
+            top:12%;
+            left: 10%;
+        }
     }
+    
     .splash-bottom-p{
         top: 23%;
         left: 10%;
