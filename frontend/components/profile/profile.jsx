@@ -84,7 +84,6 @@ class Profile extends React.Component{
             </div>
         )
     }
-
 }
 
 export default Profile
