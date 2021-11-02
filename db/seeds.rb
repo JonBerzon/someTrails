@@ -11,7 +11,7 @@ User.destroy_all
 # user1 = (email: "jb@gmail.com", password: "password", first_name:"jon", last_name: "b", bio:"I love to hike.")
 # user1 = (email: "jb@gmail.com", password: "password", first_name:"jon", last_name: "b", bio:"I Hike with my dog.")
 
-demo_user = User.create(email: "demo@gmail.com", password: "password", fname: "demo", lname: "user", bio:"Welcome to SomeTrails! This is where the bio when I feel creative enough to write one :)")
+demo_user = User.create(email: "demo@gmail.com", password: "password", fname: "demo", lname: "user", bio:"Welcome to SomeTrails! This is where the bio will go when I feel creative enough to write one :)")
 me = User.create(email: "jb@gmail.com", password: "password", fname: "Jonathan", lname: "Berzon", bio:"Welcome to SomeTrails! This is where the bio will go when I feel creative enough to write one :)")
 
 user1 = User.create(email: Faker::Internet.email, password: "password", fname: Faker::Name.first_name, lname: Faker::Name.last_name, bio:"I love to hike.")

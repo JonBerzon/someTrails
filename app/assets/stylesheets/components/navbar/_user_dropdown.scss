@@ -52,6 +52,7 @@
     flex-direction: column;
     justify-content: center;
     visibility: hidden;
+    z-index: 1;
 }
 .icon-dropdown > li{
     height: 40px;

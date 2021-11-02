@@ -41,6 +41,7 @@ class Login extends React.Component{
         return(
             <div>
                 <div className="signup-background-img">
+                    
                     <div className="signup-div-login">
                         <h1>Log in and let's get going</h1>
                         <form className="form-div" onSubmit={this.handleSubmit}>

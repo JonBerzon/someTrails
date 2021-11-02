@@ -1,0 +1,154 @@
+@import "../base/fonts.scss";
+
+.splash-stats-div{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1240px;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.splash-stats{
+    text-align: center;
+    font-family: $proxima;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    
+    h1{
+        color: #428A13;
+        font-size: 84px;
+        font-weight: 700;
+        letter-spacing: -3px;
+        font-family: $proxima;
+        margin-top: 20px;
+    }
+
+    h2{
+        color: #428A13;
+        font-size: 24px;
+        font-weight: 700;
+        font-family: $proxima;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    p{
+        color: #414141;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    
+}
+
+.splash-bottom-div{
+    height: 725px;
+    width: 100%;
+    position: relative;
+    h1{
+        position: absolute;
+        color: white;
+        font-size: 96px;
+        font-family: $proxima;
+        z-index: 3;
+        left: 16%;
+        top: 20%;
+        font-weight: bold;
+        letter-spacing: -1px;
+    }
+
+    h2{
+        position: absolute;
+        color: #F5D24B;
+        font-size: 96px;
+        font-family: $proxima;
+        z-index: 3;
+        left: 16%;
+        top: 34%;
+        font-weight: 700;
+        letter-spacing: -1px;  
+    }
+
+    p{
+        top: 50%;
+        left: 16.5%;
+        position: absolute;
+        color: white;
+        z-index: 3;
+        font-size: 18px;
+        font-family: $proxima;
+        width: 320px;
+        font-weight: 400;
+        line-height: 26px;
+    }
+}
+
+.bottom-splash-award{
+    position: absolute;
+    top: 62%;
+    left: 15%;
+    z-index: 3;
+    display: flex;
+}
+
+.rating{
+    color: white;
+    font-size: 24px;
+    font-family: $proxima;
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.gstar{
+    margin-top: 30px;
+}
+
+.splash-bottom-pic::after{
+    background: radial-gradient(circle at 47% 65%,hsla(0,0%,100%,0),rgba(0, 0, 0, .9) 60%); 
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.splash-bottom-img{
+    width: 100%;
+    height: 100%;
+    object-position: 50% 50%;
+    object-fit: cover;
+
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 680px){
+    .splash-bottom-h1{
+        font-size: 60px;
+        top: 2%;
+        left: 10%;
+    }
+    .splash-bottom-h2{
+        font-size: 60px;
+        top:12%;
+        left: 10%;
+
+    }
+    .splash-bottom-p{
+        top: 23%;
+        left: 10%;
+    }
+
+    .bottom-splash-award{
+        top: 30%;
+        left: 4%;
+    }
+}

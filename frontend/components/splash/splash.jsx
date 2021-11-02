@@ -7,8 +7,11 @@ class Splash extends React.Component{
     render(){
         return(
             <div>
+                
                 <div>
                     <SearchbarContainer />
+                    
+
                 </div>
                 <div className="splash-stats-div">
                     <div className="splash-stats">
@@ -29,9 +32,9 @@ class Splash extends React.Component{
                 </div>
                 {/* <div className="bottom-splash-background"></div> */}
                 <div className="splash-bottom-div">
-                    <h1 className="splash-bottom-h1">Explore with</h1>
-                    <h2 className="splash-bottom-h2">confidence</h2>
-                    <p className="splash-bottom-p">Inspiration and guidance for wherever your trail may lead.</p>
+                    <h1>Explore with</h1>
+                    <h2>confidence</h2>
+                    <p>Inspiration and guidance for wherever your trail may lead.</p>
                     <div className="bottom-splash-award">
                         <div>
                             <img className="aa-award"src={window.award} alt="" />

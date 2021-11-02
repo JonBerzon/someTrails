@@ -19,7 +19,8 @@ class Searchbar extends React.Component{
                         </div>
                     </div>
                     <input className="searchbar" type="text" placeholder="Search by city, park, or trail name"/>
-                    <div className="searchbar-background"></div>
+                    {/* <div className="searchbar-background"></div> */}
+                    <img className="search-bg" src={window.searchBackground}/>
                     {/* <img className="searchbar-background" src={background} /> */}
                 </div>
             </div>
