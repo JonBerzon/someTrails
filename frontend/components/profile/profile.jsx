@@ -22,6 +22,7 @@ class Profile extends React.Component{
                 currentProfile: this.props.currentProfile
             })
         }
+        // debugger
     }
 
     setFocus(type){
@@ -32,8 +33,8 @@ class Profile extends React.Component{
 
     render(){
         let arr = ["Members", `${this.state.currentProfile ? this.state.currentProfile.fname : ""}`]
-        const {currentProfile, active} = this.state
-        const {currentUser} = this.props
+        const { active, currentProfile} = this.state
+        const { currentUser } = this.props
         return(
             <div className="profile-div">
                 <hr />
