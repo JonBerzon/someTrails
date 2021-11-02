@@ -4,6 +4,10 @@ import SearchbarContainer from "../searchbar/searchbar_container";
 
 class Splash extends React.Component{
 
+    componentDidMount(){
+        this.props.fetchParks();
+    }
+
     render(){
         return(
             <div>

@@ -4,6 +4,7 @@ import configureStore from "./store/store";
 import Root from "./components/root"
 import { login, logout, signup } from "./actions/session_actions";
 import { fetchUsers } from "./actions/user_actions";
+import { fetchParks } from "./actions/park_actions";
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.logout = logout
     window.login = login
     window.fetch = fetchUsers
+    window.fetchParks = fetchParks
 
 })
 
