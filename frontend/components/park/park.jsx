@@ -1,11 +1,6 @@
 import React from "react";
 import BasicHeader from "../reusable/basic_header";
-
-import { } from '@fortawesome/react-fontawesome'
-
-
-
-
+import Map from "../map/map";
 
 class Park extends React.Component{
     constructor(props){
@@ -15,11 +10,17 @@ class Park extends React.Component{
             visibility: "visible"
         }
         this.changeVisibility=this.changeVisibility.bind(this)
+
+        this.map;
     }
 
     componentDidMount(){
         this.props.fetchPark(this.props.match.params.id)
+
+      
     }
+
+    
 
 
     changeVisibility(){
@@ -33,7 +34,7 @@ class Park extends React.Component{
         
         if (!this.props.park) return null;
         let { park } = this.props;
-        let {country, state, name, description, acreage} = park;
+        let {country, state, name, description, acreage, latitude, longitude, zoom, contact} = park;
         let oppoVisibility = this.state.visibility === "visible" ? "hidden" : "visible";
 
         let arr = [`${country}`, `${state}`, `${name}`]
@@ -56,7 +57,18 @@ class Park extends React.Component{
                     <h2 className={oppoVisibility}>{description}</h2>
                     <h3 className="park-show-text" onClick={this.changeVisibility}>{this.state.visibility === "visible" ? "Show more" : "Show less"}</h3>
                 </div>
-                <img className="delete-this" src={window.placeholder} alt="" />
+                <Map 
+                    containerStyle = {{
+                        width: '750px',
+                        height: '300px',
+                        borderRadius: '10px'
+                    }}
+                    center = {{
+                        lat: latitude,
+                        lng: longitude
+                    }}
+                    zoom = {zoom}                         
+                />
                 <div className="park-links-div">
                     <a target="_blank" href="https://goo.gl/maps/WL2g9UPZw2rpFqsS6">
                         <div className="park-link">
@@ -72,7 +84,7 @@ class Park extends React.Component{
                         </div>
                         <p>Print map</p>
                     </div>
-                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsometrails.herokuapp.com%2F%23%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
+                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsometrails.herokuapp.com%2F%23%2F&amp;src=sdkpreparse">
                     <div className="park-link">
                         <div><img src={window.share} /></div>
                         <p>Share</p>
@@ -86,12 +98,22 @@ class Park extends React.Component{
                         <h2>Acreage:</h2>
                         <p>{acreage} acres</p>
                     </div>
+                    <div className="park-info-right">
+                        <h2>Contact:</h2>
+                        <p>{contact}</p>
+                    </div>
+                   
+                    
                     
 
                 </div>
+
+                
             </div>
         )
     }
 }
 
 export default Park;
+
+//AIzaSyBuMq-P0JkItOV17Ashs37xDErlKtHB00U

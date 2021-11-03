@@ -139,9 +139,11 @@
 .park-info-div{
     height: 250px;
     width: 750px;
+    display: flex;
 }
 
-.park-info-left{
+.park-info-left,
+.park-info-right{
     width: 350px;
     height: 100%;
     font-family: $rubik;
@@ -164,5 +166,11 @@
         font-size: 16px;
         font-weight: 100;
         color: rgb(123, 123, 123);
+    }
+}
+
+.park-info-right{
+    h2{
+        margin-top: 44px;
     }
 }
