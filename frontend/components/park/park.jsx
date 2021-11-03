@@ -80,9 +80,9 @@ class Park extends React.Component{
                     </a>
                     <div className="park-link">
                         <div>
-                            <img src={window.printer} />
+                            <img onClick={() => window.print()} src={window.printer} />
                         </div>
-                        <p>Print map</p>
+                        <p>Print page</p>
                     </div>
                     <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsometrails.herokuapp.com%2F%23%2F&amp;src=sdkpreparse">
                     <div className="park-link">
@@ -102,18 +102,12 @@ class Park extends React.Component{
                         <h2>Contact:</h2>
                         <p>{contact}</p>
                     </div>
-                   
-                    
-                    
-
-                </div>
-
-                
+                </div> 
+                <div className="">
+                </div>   
             </div>
         )
     }
 }
 
 export default Park;
-
-//AIzaSyBuMq-P0JkItOV17Ashs37xDErlKtHB00U

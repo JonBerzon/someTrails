@@ -1,11 +1,10 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { key } from '../../../key/key';
 
 function MyComponent(props) {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: key
+        googleMapsApiKey: ""
     })
 
     return isLoaded ? (
