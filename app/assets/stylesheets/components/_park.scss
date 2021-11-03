@@ -1,0 +1,75 @@
+@import "../base/fonts.scss";
+
+.park-div{
+    width: 970px;
+    margin: auto;
+}
+
+.park-image-header{
+    height: 250px;
+    width: 970px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+    img{
+        height: 210px;
+        width: 315px;
+        border-radius: 10px;
+        cursor: pointer;
+        
+    }
+}
+
+.park-summary-div{
+    width: 750px;
+
+    h1{
+        color: #414141;
+        font-size: 32px;
+        font-family: $rubik;
+        font-weight: 500;
+    }
+
+    .park-reviews{
+        display: flex;
+        align-items: center;
+        padding: 15px 0px 15px 0px;
+        font-size: 15px;
+        // letter-spacing: .5px;
+        font-family: $rubik;
+        font-weight: 300;
+        color: rgb(85, 85, 85);
+
+        img{
+            height: 16px;
+            width: auto;
+            margin-right: 10px;
+        }
+    }
+
+     h2{
+        font-family: $rubik;
+        font-size: 18px;
+        font-weight: 100;
+        color: rgb(96, 96, 96);
+        line-height: 26px;
+    }
+}
+
+// .visible{
+//     visibility: visible;
+// }
+
+.hidden{
+    display: none;
+}
+
+.park-show-text{
+    cursor: pointer;
+    color: #428A13;
+    font-family: $rubik;
+    font-weight: 100;
+    font-size: 14px;
+    padding: 10px 0px;
+}

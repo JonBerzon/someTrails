@@ -4,7 +4,5 @@
         if user.photo.attached?
             json.photoUrl url_for(user.photo)
         end
-        
-        
     end
 end

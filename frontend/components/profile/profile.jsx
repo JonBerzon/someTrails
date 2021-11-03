@@ -32,7 +32,9 @@ class Profile extends React.Component{
     }
 
     render(){
-        let arr = ["Members", `${this.state.currentProfile ? this.state.currentProfile.fname : ""}`]
+        if (!this.state.currentProfile) return null;
+        let arr = ["Members", `${this.state.currentProfile.fname}`]
+
         const { active, currentProfile} = this.state
         const { currentUser } = this.props
         return(
@@ -68,15 +70,15 @@ class Profile extends React.Component{
                                 </div>          
                             </div>
                             <h1>Member Since</h1>
-                            <p>{currentProfile ? currentProfile.created_at.slice(0, 4) : ""}</p>                            
+                            <p>{currentProfile.created_at.slice(0, 4)}</p>                            
                         </div>
                         <div className="profile-tab-user-info">
-                            <h1>{currentProfile ? currentProfile.fname +" "+ currentProfile.lname: ""}</h1>
+                            <h1>{currentProfile.fname +" "+ currentProfile.lname}</h1>
                             <h2>New York City, New York</h2>
                             <div>
                                 <hr />
                             </div>
-                            <h3>{currentProfile ? currentProfile.bio : ""}</h3>
+                            <h3>{currentProfile.bio}</h3>
                             <h4>Favorite Activities</h4>
                         </div>
                     </div>
