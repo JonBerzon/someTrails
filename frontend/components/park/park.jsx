@@ -33,7 +33,7 @@ class Park extends React.Component{
         
         if (!this.props.park) return null;
         let { park } = this.props;
-        let {country, state, name, description} = park;
+        let {country, state, name, description, acreage} = park;
         let oppoVisibility = this.state.visibility === "visible" ? "hidden" : "visible";
 
         let arr = [`${country}`, `${state}`, `${name}`]
@@ -58,20 +58,35 @@ class Park extends React.Component{
                 </div>
                 <img className="delete-this" src={window.placeholder} alt="" />
                 <div className="park-links-div">
-                    <div className="park-link">
-                        <div><img src={window.direction}/></div>
-                        <p>Directions</p>
-                    </div>
+                    <a target="_blank" href="https://goo.gl/maps/WL2g9UPZw2rpFqsS6">
+                        <div className="park-link">
+                            <div>
+                                <img src={window.direction}/>
+                            </div>
+                            <p>Directions</p>
+                        </div>
+                    </a>
                     <div className="park-link">
                         <div>
                             <img src={window.printer} />
                         </div>
                         <p>Print map</p>
                     </div>
+                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsometrails.herokuapp.com%2F%23%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
                     <div className="park-link">
                         <div><img src={window.share} /></div>
                         <p>Share</p>
                     </div>
+                    </a>
+                </div>
+                <hr />
+                <div className="park-info-div">
+                    <div className="park-info-left">
+                        <h1>Park information</h1>
+                        <h2>Acreage:</h2>
+                        <p>{acreage} acres</p>
+                    </div>
+                    
 
                 </div>
             </div>
