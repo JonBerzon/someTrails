@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetch = fetchUsers
     window.fetchParks = fetchParks
 
+   
+
 })
 
 // store.dispatch(signup({ email: "jb@gmail.com", password: "starwars", first_name:"jon", last_name: "b", bio:"hi im jon"}))

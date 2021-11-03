@@ -16,6 +16,8 @@
         }
       </script>
       <% end %>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
 
     <script type="text/javascript">
@@ -33,10 +35,15 @@
         window.rmnp1= "<%= image_url('RMNP1.jpg') %>";
         window.rmnp2= "<%= image_url('RMNP2.jpg') %>";
         window.rmnp3= "<%= image_url('RMNP3.jpg') %>";
-        
+        window.placeholder= "<%= image_url('placeholder.jpg') %>"; 
+        window.direction="<%= image_url('direction.png') %>"; 
+        window.printer="<%= image_url('printer.png') %>"; 
+        window.share="<%= image_url('share.png') %>"; 
+
 
     </script>
     <%= favicon_link_tag asset_path('logo_only.png') %>
+    
  
 
   </head>

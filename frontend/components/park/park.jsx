@@ -1,6 +1,11 @@
 import React from "react";
 import BasicHeader from "../reusable/basic_header";
 
+import { } from '@fortawesome/react-fontawesome'
+
+
+
+
 
 class Park extends React.Component{
     constructor(props){
@@ -16,6 +21,7 @@ class Park extends React.Component{
         this.props.fetchPark(this.props.match.params.id)
     }
 
+
     changeVisibility(){
         let oppo = this.state.visibility === "visible" ? "hidden" : "visible"
         this.setState({
@@ -24,6 +30,7 @@ class Park extends React.Component{
     }
 
     render(){
+        
         if (!this.props.park) return null;
         let { park } = this.props;
         let {country, state, name, description} = park;
@@ -48,6 +55,24 @@ class Park extends React.Component{
                     <h2 className={this.state.visibility}>{description.split(" ").slice(0, 40).join(" ")}<span>....</span></h2>
                     <h2 className={oppoVisibility}>{description}</h2>
                     <h3 className="park-show-text" onClick={this.changeVisibility}>{this.state.visibility === "visible" ? "Show more" : "Show less"}</h3>
+                </div>
+                <img className="delete-this" src={window.placeholder} alt="" />
+                <div className="park-links-div">
+                    <div className="park-link">
+                        <div><img src={window.direction}/></div>
+                        <p>Directions</p>
+                    </div>
+                    <div className="park-link">
+                        <div>
+                            <img src={window.printer} />
+                        </div>
+                        <p>Print map</p>
+                    </div>
+                    <div className="park-link">
+                        <div><img src={window.share} /></div>
+                        <p>Share</p>
+                    </div>
+
                 </div>
             </div>
         )
