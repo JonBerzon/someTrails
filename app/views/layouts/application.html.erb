@@ -34,7 +34,7 @@
         window.direction="<%= image_url('direction.png') %>"; 
         window.printer="<%= image_url('printer.png') %>"; 
         window.share="<%= image_url('share.png') %>"; 
-        window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>"
+        window.nonDescriptMap = "<%= Rails.application.credentials.google[:api_key] %>"
 
     </script>
     <%= favicon_link_tag asset_path('logo_only.png') %>
