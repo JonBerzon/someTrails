@@ -1,6 +1,7 @@
 import React from "react";
 import BasicHeader from "../reusable/basic_header";
 import Map from "../map/map";
+import ParkTrail from "../park_trail/park_trail";
 
 class Park extends React.Component{
     constructor(props){
@@ -59,9 +60,10 @@ class Park extends React.Component{
                 </div>
                 <Map 
                     containerStyle = {{
-                        width: '750px',
+                        width: '90vw',
                         height: '300px',
-                        borderRadius: '10px'
+                        borderRadius: '10px',
+                        maxWidth: '750px'
                     }}
                     center = {{
                         lat: latitude,
@@ -102,9 +104,19 @@ class Park extends React.Component{
                         <h2>Contact:</h2>
                         <p>{contact}</p>
                     </div>
-                </div> 
-                <div className="">
-                </div>   
+                </div>
+                <div className="park-bottom-trails">
+                    <h1 >Top Trails (222)</h1>
+                    <ParkTrail />
+                    <br />
+                    <ParkTrail />
+                    <br />
+                    <ParkTrail />
+                    <br />
+                    <ParkTrail />
+
+                </div>
+                   
             </div>
         )
     }

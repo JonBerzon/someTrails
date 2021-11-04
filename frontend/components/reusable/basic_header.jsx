@@ -21,7 +21,7 @@ class BasicHeader extends React.Component{
                             })
                         }
                     </div>
-                    <div>
+                    <div className="basic-header-search">
                         <BasicSearch />
                     </div>
                 </div>

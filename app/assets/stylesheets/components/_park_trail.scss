@@ -1,0 +1,171 @@
+@import "../base/fonts.scss";
+.park-trail-div{
+    width: 970px;
+    height: 225px;
+    box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    img{
+        height: 195px;
+        width: auto;
+        border-radius: 10px;
+        margin: 0px 15px;
+    }
+}
+
+.park-trail-info{
+    font-family: $rubik;
+    align-self: flex-start;
+    margin-top: 20px;
+    margin-left: 10px;
+    h1{
+        color: #414141;
+        font-size: 22px;
+        font-weight: 500;
+        margin-top: 5px;
+        
+    }
+
+    h2{
+        color: #7b7b7b;
+        font-weight: 200;
+        font-size: 15px;
+        margin: 5px 0px;
+    }  
+}
+
+.park-trail-difficulty-div{
+    display: flex;
+    font-weight: 100;
+    color: #7b7b7b;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    span{
+        padding: 4px 12px;
+        background-color:#4bafe1;
+        color: white;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+
+    p{
+        font-size: 12px;
+    }
+
+
+    img{
+        height: 14px;
+        width: auto;
+    }
+}
+
+.park-trail-length-div{
+    display: flex;
+    align-items: center;
+    
+    h3{
+        color: #7b7b7b;
+        font-weight: 100;
+        font-size: 14px;
+        margin: 7px;
+
+        &:first-child{
+            margin-left: 0px;
+        }
+    }
+
+    span{
+        color: #7b7b7b;
+    }
+}
+
+
+.park-trail-bottom-text{
+    position: relative;
+
+    h4{
+        height: 50px;
+        margin-top: 10px;
+        color: #7b7b7b;
+        font-weight: 100;
+        font-size: 17px;
+        line-height: 25px;
+        overflow: hidden; 
+    }
+
+    h5{
+        position: absolute;
+        color: #428a13;
+        top: 31px;
+        left: 87%;
+        background-color: white;
+        box-shadow: 0px 0px 21px 4px rgba(255, 255, 255, .99);
+        font-size: 15px;
+        font-weight: 100;
+        &:hover{
+            color:#69a041 ;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 1050px){
+    .park-trail-div{
+        width: 93vw;
+    }
+}
+
+@media only screen and (max-width: 660px){
+    .park-trail-bottom-text{
+        h5{
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 585px){
+   .park-trail-info{
+       h1{
+           font-size: 14px;
+       }
+
+       h2{
+           font-size: 12px;
+       }
+   }
+
+   .park-trail-difficulty-div{
+       img{
+           height: 13px;
+       }
+       p{
+           display: none;
+       }
+
+   }
+
+   .park-trail-length-div{
+       h3{
+            font-size: 11px;
+       }  
+   }
+
+   .park-trail-bottom-text{
+       h4{
+           font-size: 14px;
+       }
+   }
+
+   
+}
+
+
+// .park-summary-div{
+//     width: 95vw;
+// }
+

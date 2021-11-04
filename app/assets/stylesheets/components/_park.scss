@@ -36,7 +36,6 @@
         align-items: center;
         padding: 15px 0px 15px 0px;
         font-size: 15px;
-        // letter-spacing: .5px;
         font-family: $rubik;
         font-weight: 300;
         color: rgb(85, 85, 85);
@@ -137,7 +136,7 @@
 }
 
 .park-info-div{
-    height: 250px;
+    height: 190px;
     width: 750px;
     display: flex;
 }
@@ -173,4 +172,45 @@
     h2{
         margin-top: 44px;
     }
+}
+
+.park-bottom-trails{
+    h1{
+        color: #414141;
+        font-size: 23px;
+        font-weight: 500;
+        font-family: $rubik;
+        margin-bottom: 14px;
+    }
+
+    margin-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 1050px){
+    .park-div{
+        margin-left: 3%;
+    }
+}
+
+@media only screen and (max-width: 790px){
+    .park-summary-div{
+        width: 95vw;
+    }
+
+    .park-links-div{
+        width: 95vw;
+
+        p{
+            display: none;
+        }
+
+        
+    }
+
+    .park-image-header{
+       &:last-child{
+           display: none;
+       }
+   }
 }
