@@ -16,9 +16,8 @@ class Park extends React.Component{
     }
 
     componentDidMount(){
-        this.props.fetchPark(this.props.match.params.id)
-
-      
+        this.props.fetchPark(this.props.match.params.id);
+        this.props.fetchTrails();    
     }
 
     
@@ -34,25 +33,33 @@ class Park extends React.Component{
     render(){
         
         if (!this.props.park) return null;
+        if (this.props.trails.length === 0) return null;
         let { park } = this.props;
-        let {country, state, name, description, acreage, latitude, longitude, zoom, contact} = park;
+        let {country, state, directions, name, description, acreage, latitude, longitude, zoom, contact} = park;
         let oppoVisibility = this.state.visibility === "visible" ? "hidden" : "visible";
 
         let arr = [`${country}`, `${state}`, `${name}`]
+        let {trails} = this.props
+        console.log(this.props.trails)
+        // debugger
         return(
             <div className="park-div">
                 <hr />
                 <BasicHeader arr={arr}/>
                 <div className="park-image-header">
-                    <img src={window.rmnp1} />
+                    {/* <img src={window.rmnp1} />
                     <img src={window.rmnp2} />
-                    <img src={window.rmnp3} />
+                    <img src={window.rmnp3} /> */}
+                    <img src={trails[0].photosUrl[0]} />
+                    <img src={trails[1].photosUrl[0]} />
+                    <img src={trails[2].photosUrl[0]} />
+                    
                 </div>
                 <div className="park-summary-div">
                     <h1>{`Best Trails in ${name}`}</h1>
                     <div className="park-reviews">
                         <img src={window.stars} alt="" />
-                        <p>44,208 Reviews</p>
+                        <p>{Math.floor(Math.random() * 50000)} Reviews</p>
                     </div>
                     <h2 className={this.state.visibility}>{description.split(" ").slice(0, 40).join(" ")}<span>....</span></h2>
                     <h2 className={oppoVisibility}>{description}</h2>
@@ -72,7 +79,7 @@ class Park extends React.Component{
                     zoom = {zoom}                         
                 />
                 <div className="park-links-div">
-                    <a target="_blank" href="https://goo.gl/maps/WL2g9UPZw2rpFqsS6">
+                    <a target="_blank" href={directions}>
                         <div className="park-link">
                             <div>
                                 <img src={window.direction}/>
@@ -107,13 +114,14 @@ class Park extends React.Component{
                 </div>
                 <div className="park-bottom-trails">
                     <h1 >Top Trails (222)</h1>
-                    <ParkTrail />
-                    <br />
-                    <ParkTrail />
-                    <br />
-                    <ParkTrail />
-                    <br />
-                    <ParkTrail />
+                    {trails.map((trail, idx)=>{
+                        return (
+                            <div>
+                                <ParkTrail key={idx} trail={trail} idx={idx} park={park}/>
+                                <br />
+                            </div>
+                        )
+                    })}
 
                 </div>
                    

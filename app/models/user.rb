@@ -9,7 +9,7 @@ class User < ApplicationRecord
     # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } #validates email format
     after_initialize :ensure_session_token
 
-    has_one_attached :photo
+    
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

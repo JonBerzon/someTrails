@@ -1,1 +1,1 @@
-json.extract! @park, :id, :name, :latitude, :longitude, :description, :acreage, :country, :state, :contact, :zoom
+json.extract! @park, :id, :name, :directions, :latitude, :longitude, :description, :acreage, :country, :state, :contact, :zoom

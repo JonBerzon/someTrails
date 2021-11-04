@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_04_182617) do
+ActiveRecord::Schema.define(version: 2021_11_04_213419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_11_04_182617) do
     t.datetime "updated_at", null: false
     t.string "contact"
     t.integer "zoom"
+    t.text "directions"
     t.index ["name"], name: "index_parks_on_name"
   end
 
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 2021_11_04_182617) do
     t.text "directions", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "duration"
     t.index ["park_id"], name: "index_trails_on_park_id"
   end
 
