@@ -1,6 +1,8 @@
 import React from "react";
 import BasicHeader from "../reusable/basic_header";
 import { Link } from "react-router-dom";
+import TrailHeader from "./trail_header";
+import Map from "../map/map";
 
 class Trail extends React.Component{
     constructor(props){
@@ -25,38 +27,56 @@ class Trail extends React.Component{
         let arr = [park.country, park.state, park.name, trail.name]
 
         return(
-            <div className="trail-div">
-                <hr />
-                <BasicHeader arr={arr}/>
-                <div className="trail-header">
-                    <img src={trail.photosUrl[0]}/>
-                    <div className="trail-picture-header-text">
-                        <h1>{trail.name}</h1>
-                        <div className="trail-picture-stats">
-                            <h2 className={trail.difficulty}>{trail.difficulty}</h2>
-                            <img src={window.stars}/>
-                            <p>({Math.floor(Math.random() * 10000)})</p>
-                        </div>
-                        <h3>{park.name}</h3>
-                    </div>
+            <div className="trail-bg-color">
+                <div className="trail-div">
+                    <hr />
+                    <BasicHeader arr={arr}/>
+                    <TrailHeader trail={trail} park={park} toPark={this.toPark}/>
                 </div>
-                <div className="trail-mini-nav">
-                    <div onClick={() => this.toPark(park.id)}>
-                        <span className="outer-circle"><img src={window.park} /></span>
-                        <p>Park</p>
+                <div className="trail-lower-container">
+                    <div className="trail-lower-left">
+                        <div className="trail-description">{trail.description}<hr /></div>
+                        <div className="trail-stats">
+                            <h1>Length</h1>
+                            <h2>{trail.length}</h2>
+                        </div>
+                        <div className="trail-stats">
+                            <h1>Elevation gain</h1>
+                            <h2>{trail.elevation}</h2>
+                        </div>
+                        <div className="trail-stats">
+                            <h1>Route type</h1>
+                            <h2>{trail.route}</h2>
+                        </div>
+                        
+
                     </div>
-                    <a target="_blank" href={trail.directions}>
-                        <span className="outer-circle"><img src={window.direction} /></span>
-                        <p>Directions</p>  
-                    </a>
-                    <div onClick={() => window.print()}>
-                        <span className="outer-circle"><img src={window.printer} /></span>
-                        <p>Print Page</p>
+                    <div className="trail-lower-right">
+                        <div className="trail-map">
+                            <Map
+                                containerStyle={{
+                                    width: '300px',
+                                    height: '250px',
+                                    borderRadius: '10px'
+                                }}
+                                center={{
+                                    lat: trail.latitude,
+                                    lng: trail.longitude
+                                }}
+                                zoom={17}
+                                marker={{
+                                    lat: trail.latitude,
+                                    lng: trail.longitude
+                                }}
+                                defaultMapOptions = {{
+                                    fullscreenControl: false,
+                                    mapTypeControl: false,
+                                    keyboardShortcuts: false
+                                }}
+                            />
+                        </div>
+
                     </div>
-                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsometrails.herokuapp.com%2F%23%2F&amp;src=sdkpreparse">
-                        <span className="outer-circle"><img src={window.share}/></span>
-                        <p>Share</p>
-                    </a>
 
                 </div>
             </div>

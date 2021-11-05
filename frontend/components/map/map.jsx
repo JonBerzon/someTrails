@@ -43,11 +43,12 @@ function MyComponent(props) {
             mapContainerStyle={props.containerStyle}
             center={props.center}
             zoom={props.zoom}
+            options={props.defaultMapOptions}
         >
     
-            {/* <Marker
-                position={props.center}
-                /> */}
+            <Marker
+                position={props.marker}
+                />
 
             {/* <Polyline
                 path={path}
