@@ -52,3 +52,64 @@
 .trail-map{
     margin-top: 10px;
 }
+
+.trail-stats-div{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-left: 3%;
+}
+.trail-stats{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    color: #414141;
+
+    h1{
+        font-weight: 100;
+        font-size: 12px;
+    }
+    h2{
+        margin-top: 5px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+}
+
+.weather-test{
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    margin-top: 20px;
+    div{
+        margin-left: 5px;
+        width: 20%;
+        text-align: center;
+
+        h1{
+            font-weight: 100;
+        }
+    }
+}
+
+.weather-header{
+    height: 60px;
+    background-color: #e6e6e6;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    h1{
+        font-size: 18px;
+        color: #428a13;
+        // padding: 17px 0px 17px 0px;
+        // border-bottom: 2px solid #428a13;
+        // width: 68px;
+        margin-left: 20px;
+        font-weight: 500;
+        
+    }
+}
+
