@@ -11,8 +11,7 @@ class Park extends React.Component{
             visibility: "visible"
         }
         this.changeVisibility=this.changeVisibility.bind(this)
-
-        this.map;
+        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount(){
@@ -30,8 +29,11 @@ class Park extends React.Component{
         })
     }
 
+    handleClick(e){
+        this.props.history.push(`/trail/${e}`)
+    }
+
     render(){
-        
         if (!this.props.park) return null;
         if (this.props.trails.length === 0) return null;
         let { park } = this.props;
@@ -41,18 +43,14 @@ class Park extends React.Component{
         let arr = [`${country}`, `${state}`, `${name}`]
         let {trails} = this.props
         console.log(this.props.trails)
-        // debugger
         return(
             <div className="park-div">
                 <hr />
                 <BasicHeader arr={arr}/>
                 <div className="park-image-header">
-                    {/* <img src={window.rmnp1} />
-                    <img src={window.rmnp2} />
-                    <img src={window.rmnp3} /> */}
-                    <img src={trails[0].photosUrl[0]} />
-                    <img src={trails[1].photosUrl[0]} />
-                    <img src={trails[2].photosUrl[0]} />
+                    <img onClick={() => this.handleClick(trails[0].id)} src={trails[0].photosUrl[0]} />
+                    <img onClick={() => this.handleClick(trails[1].id)} src={trails[1].photosUrl[0]} />
+                    <img onClick={() => this.handleClick(trails[2].id)} src={trails[2].photosUrl[0]} />
                     
                 </div>
                 <div className="park-summary-div">
@@ -116,15 +114,13 @@ class Park extends React.Component{
                     <h1 >Top Trails (222)</h1>
                     {trails.map((trail, idx)=>{
                         return (
-                            <div>
-                                <ParkTrail key={idx} trail={trail} idx={idx} park={park}/>
+                            <div key={ trail.id }>
+                                <ParkTrail handleClick={this.handleClick} trail={trail} idx={idx} park={park}/>
                                 <br />
                             </div>
                         )
                     })}
-
-                </div>
-                   
+                </div>                 
             </div>
         )
     }

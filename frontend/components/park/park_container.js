@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
 import { fetchPark } from "../../actions/park_actions";
 import { fetchTrails } from "../../actions/trail_action";
 import Park from "./park";
@@ -14,4 +15,4 @@ const mDTP = dispatch => ({
     fetchTrails: () => dispatch(fetchTrails())
 })
 
-export default connect(mSTP, mDTP)(Park)
+export default  withRouter(connect(mSTP, mDTP)(Park))

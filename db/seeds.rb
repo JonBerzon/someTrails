@@ -26,11 +26,11 @@ rocky = Park.create!(name: "Rocky Mountain National Park", latitude: 40.343182, 
 Trail.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('trails')
 emerald = Trail.create!(park_id: rocky.id, name: "Emerald Lake Trail", duration: "1 h 46 m", difficulty: "moderate", length: "3.2 mi", elevation: "698 ft", route: "Out & back", latitude: 40.31195, longitude: -105.64567, zoom: 10, directions: "https://www.google.com/maps/dir//40.31195,-105.64567/@40.3114007,-105.6465976,18.14z", description: "Emerald Lake Trail is a 3.2 mile heavily trafficked out and back trail located near Estes Park, Colorado that features a lake and is rated as moderate. The trail is primarily used for hiking and snowshoeing and is best used from June until October." )
-emerald.photos.attach(io: File.open('app/assets/images/aws/RMNP1.jpg', ), filename: 'RMNP1.jpg')
+emerald.photos.attach(io: File.open('app/assets/images/aws/RMNP3.jpg', ), filename: 'RMNP1.jpg')
 
 sky = Trail.create!(park_id: rocky.id, name: "Sky Pond Trail", duration: "4 h 58 m", difficulty: "hard", length: "9.4 mi", elevation: "1,758 ft", route: "Out & back", latitude: 40.31052, longitude: -107.7178223, zoom: 10, directions: "https://www.google.com/maps/dir//40.31052,-105.6403/@38.8417478,-107.7178223,4z", description: "Sky Pond Trail is a 9.4 mile heavily trafficked out and back trail located near Estes Park, Colorado that features a lake and is rated as difficult. The trail is primarily used for hiking and snowshoeing and is best used from June until October." )
 sky.photos.attach(io: File.open('app/assets/images/aws/RMNP2.jpg', ), filename: 'RMNP2.jpg')
 
 alberta = Trail.create!(park_id: rocky.id, name: "Alberta Falls Trail", duration: "1 h 02 m", difficulty: "easy", length: "1.6 mi", elevation: "232 ft", route: "Out & back", latitude: 40.31046, longitude: -105.64036, zoom: 10, directions: "https://www.google.com/maps/dir//40.31046,-105.64036/@38.8417478,-107.7191496,4z", description: "Alberta Falls Trail is a 1.6 mile heavily trafficked out and back trail located near Estes Park, Colorado that features a waterfall and is good for all skill levels. The trail is primarily used for hiking, walking, running, horses, and snowshoeing and is best used from May until October. Horses are also able to use this trail." )
-alberta.photos.attach(io: File.open('app/assets/images/aws/RMNP3.jpg', ), filename: 'RMNP3.jpg')
+alberta.photos.attach(io: File.open('app/assets/images/aws/RMNP1.jpg', ), filename: 'RMNP3.jpg')
 

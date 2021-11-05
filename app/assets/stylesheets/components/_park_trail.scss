@@ -45,17 +45,6 @@
     margin-top: 10px;
     margin-bottom: 10px;
 
-    span{
-        padding: 4px;
-        text-align: center;
-        // margin: auto;
-        width: 63px;
-        // height: 18px;
-        color: white;
-        font-size: 11px;
-        border-radius: 5px;
-    }
-
     p{
         font-size: 12px;
     }
@@ -65,6 +54,17 @@
         height: 14px;
         width: auto;
     }
+}
+
+.easy,
+.moderate,
+.hard{
+    padding: 4px;
+    text-align: center;
+    width: 63px;
+    color: white;
+    font-size: 11px;
+    border-radius: 5px;
 }
 
 .moderate{

@@ -9,6 +9,7 @@ import NavbarContainer from "./navbar/navbar_container";
 import ProfileContainer from "./profile/profile_container";
 import ParkContainer from "./park/park_container";
 import SplashContainer from "./splash/splash_container";
+import TrailContainer from "./trail/trail_container";
 
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
             <AuthRoute path="/login" component={LoginContainer} />
             <Route path="/park/:id" component ={ParkContainer} />
             <Route path="/profile/:id" component={ProfileContainer} />
+            <Route path="/trail/:id" component={TrailContainer} />
             <Route path="/" component={SplashContainer} />
         </Switch>
         <Footer />

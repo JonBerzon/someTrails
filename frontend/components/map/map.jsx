@@ -44,6 +44,7 @@ function MyComponent(props) {
             center={props.center}
             zoom={props.zoom}
         >
+    
             {/* <Marker
                 position={props.center}
                 /> */}

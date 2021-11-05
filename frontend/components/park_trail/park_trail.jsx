@@ -8,7 +8,7 @@ class ParkTrail extends React.Component{
     render(){
         let {trail, idx, park} = this.props
         return(
-            <div className="park-trail-div">
+            <div className="park-trail-div" onClick={() => this.props.handleClick(trail.id)}>
                 <img src={trail.photosUrl[0]} alt="" />
                 <div className="park-trail-info">
                     <h1>#{idx + 1} - {trail.name}</h1>
@@ -21,7 +21,7 @@ class ParkTrail extends React.Component{
                     <div className="park-trail-length-div">
                         <h3>Length: {trail.length}</h3>
                         <span>&#8226;</span>
-                        <h3>Est. 1 h 46 m</h3>
+                        <h3>Est. {trail.duration}</h3>
                     </div>
                     <div className="park-trail-bottom-text">
                         <h4>{trail.description}</h4>
