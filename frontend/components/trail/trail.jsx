@@ -8,7 +8,11 @@ import { fetchWeather, weatherResponse } from "../../util/weather_api_util";
 class Trail extends React.Component{
     constructor(props){
         super(props)
+        this.state = {
+            selected: "weather"
+        }
         this.toPark = this.toPark.bind(this)
+        this.switchSelected = this.switchSelected.bind(this)
     }
 
     componentDidMount(){
@@ -17,7 +21,12 @@ class Trail extends React.Component{
     }
 
     
-
+    switchSelected(){
+        
+        this.setState({
+            selected: this.state.selected === "weather" ? "daylight" : "weather"
+        })
+    }
 
     toPark(id){
         this.props.history.push(`/park/${id}`)
@@ -25,6 +34,7 @@ class Trail extends React.Component{
    
 
     render() {
+        // debugger
         // if (!this.state.weather) return null;
         // if (!this.state.weather.responseJSON) return null;
         if (!this.props.weather) return null;
@@ -81,7 +91,12 @@ class Trail extends React.Component{
                         </div>
 
                         <div className="weather-header">
-                            <h1>Weather</h1>
+                            <h1 onClick={this.switchSelected}
+                                className={this.state.selected === "weather" ? "trail-selected" : "trail-nonselected"}>
+                                Weather</h1>
+                            <h1 onClick={this.switchSelected}
+                                className={this.state.selected === "daylight" ? "trail-selected" : "trail-nonselected"}>
+                                Daylight</h1>
                         </div>
                         <div className="weather-test">{weath}</div>
                     </div>

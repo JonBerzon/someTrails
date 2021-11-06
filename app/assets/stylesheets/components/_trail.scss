@@ -100,16 +100,32 @@
     background-color: #e6e6e6;
     margin-top: 20px;
     display: flex;
-    align-items: center;
+    // align-items: center;
     h1{
-        font-size: 18px;
-        color: #428a13;
-        // padding: 17px 0px 17px 0px;
-        // border-bottom: 2px solid #428a13;
-        // width: 68px;
-        margin-left: 20px;
-        font-weight: 500;
-        
+        cursor: pointer;
+         font-size: 18px;
+    margin-left: 20px;
+    margin-right: 30px;
+    font-weight: 500; 
+    padding: 18px 0px 18px 0px;
     }
+    
+}
+
+.trail-nonselected{
+    color: #414141;
+
+   &:hover{
+       color: #69a041;
+   }
+
+}
+
+.trail-selected{
+    color: #428a13;   
+   
+
+    border-bottom: 2px solid #428a13;
+
 }
 
