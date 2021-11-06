@@ -5,6 +5,8 @@
             json.photosUrl trail.photos.map { |photo| url_for(photo)}
         end
         json.park trail.park 
+
+        json.descriptors trail.descriptors.map {|descriptor| descriptor.name}
     end
 
 

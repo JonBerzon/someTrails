@@ -4,5 +4,11 @@ class Trail < ApplicationRecord
     belongs_to :park 
 
     has_many_attached :photos
+
+    has_many :trail_descriptors
+
+    has_many :descriptors,
+        through: :trail_descriptors,
+        source: :descriptor
     
 end

@@ -5,6 +5,8 @@ import TrailHeader from "./trail_header";
 import Map from "../map/map";
 import { fetchWeather, weatherResponse } from "../../util/weather_api_util";
 import TrailPreview from "./trail_preview";
+import Weather from "../reusable/weather";
+import Daylight from "../reusable/daylight";
 
 class Trail extends React.Component{
     constructor(props){
@@ -53,48 +55,11 @@ class Trail extends React.Component{
     render() {
         if (!this.props.weather) return null;
         if (!this.props.trails) return null;
-        if (!this.props.trail) return null;
-        
+        if (!this.props.trail) return null;    
         let {trail} = this.props
         let {park} = trail
         let arr = [park.country, park.state, park.name, trail.name]
         let { weather }  = this.props
-
-        let weath = <h1>Loading Weather...</h1>
-        if (!this.props.weather.forecast) {
-            weath 
-        } else {
-            weath = Object.values(weather.forecast.forecastday).map(forecast => {
-                return (
-                    <div key={forecast.date} className="trail-weather">
-                        <h1>{new Date(forecast.date + " 00:00").toLocaleDateString('en-Us', { weekday: "long" })}</h1>
-                        <img src={forecast.day.condition.icon} alt="" />
-                        <h1>{forecast.day.maxtemp_f}&#176;  /  {forecast.day.mintemp_f}&#176; F</h1>
-                    </div>
-                )
-            })
-        }
-
-        let dlight = <h1>Loading Daylight...</h1>
-        if (!this.props.weather.forecast) {
-            dlight
-        } else {
-            let today = weather.forecast.forecastday[0]
-           dlight = 
-           <div className="trail-weather-div">
-               <div>
-                   <h1>Sunrise</h1>
-                   <img className="trail-dlight" src={window.sunrise} alt="" />
-                   <h1>{today.astro.sunrise}</h1>
-               </div>
-                <div>
-                    <h1>Sunset</h1>
-                   <img className="trail-dlight" src={window.sunset} alt="" />
-                    <h1>{today.astro.sunset}</h1>
-                </div> 
-           </div>
-        }
-        
 
         return(
             <div className="trail-bg-color">
@@ -131,9 +96,9 @@ class Trail extends React.Component{
                         </div>
                         {
                             this.state.selected === "weather" ? (
-                                <div className="trail-weather-div">{weath}</div>
+                                    <Weather weather={weather}/>
                             ) : (
-                                <div>{dlight}</div>
+                                    <Daylight weather={weather}/>  
                             )
                         }
                         
@@ -171,13 +136,12 @@ class Trail extends React.Component{
                                             return ""
                                         } else {
                                             return (
-                                                <div>
+                                                <div key={trl.id}>
                                                     <TrailPreview trail={trl} park={park} toTrail={this.toTrail} />
                                                     <br />
                                                 </div>
                                             )
-                                        }
-                                        
+                                        }                       
                                     })
                                 }
                             </div>

@@ -1,7 +1,7 @@
 class Api::TrailsController < ApplicationController
 
     def index 
-        @trails = Trail.all 
+        @trails = Trail.with_attached_photos.all.includes(:descriptors)
         render :index 
     end
 
