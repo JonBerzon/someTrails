@@ -9,13 +9,11 @@ const mSTP = (state, ownProps) => ({
     trails: Object.values(state.entities.trails).filter(trail => trail.park_id === state.entities.trails[ownProps.match.params.id].park_id),
     trail: state.entities.trails[ownProps.match.params.id],
     weather: state.entities.weather
-    // parks: state.entities.parks
 })
 
 const mDTP = dispatch => ({
     fetchTrails: () => dispatch(fetchTrails()),
-    fetchWeather: () => dispatch(fetchWeather())
-    // fetchParks: () => dispatch(fetchParks())
+    fetchWeather: (coord) => dispatch(fetchWeather(coord))
 })
 
 export default connect(mSTP, mDTP)(Trail)

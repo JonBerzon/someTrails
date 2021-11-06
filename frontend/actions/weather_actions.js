@@ -8,8 +8,8 @@ const receiveWeather = weather =>({
     weather
 })
 
-export const fetchWeather = () => dispatch => {
-    return WeatherApiUtil.fetchWeather()
+export const fetchWeather = (coord) => dispatch => {
+    return WeatherApiUtil.fetchWeather(coord)
         .then(weather => dispatch(receiveWeather(weather)))
 }
 
