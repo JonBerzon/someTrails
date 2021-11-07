@@ -32,8 +32,7 @@ class Trail extends React.Component{
             })
         }
     }
-
-    
+  
     switchSelected(){
         
         this.setState({
@@ -51,7 +50,6 @@ class Trail extends React.Component{
         this.props.history.push(`/trail/${id}`)
     }
    
-
     render() {
         if (!this.props.weather) return null;
         if (!this.props.trails) return null;
@@ -85,6 +83,18 @@ class Trail extends React.Component{
                                 <h2>{trail.route}</h2>
                             </div>
                         </div>
+                        <div className="trail-descriptors">
+                            {
+                                trail.descriptors.map(desc => {
+                                    return(
+                                    <div key={desc} className="trail-descriptor-index">
+                                        <h1>{desc}</h1>
+                                    </div>
+                                )})
+                            }
+
+                        </div>
+
 
                         <div className="weather-header">
                             <h1 onClick={this.switchSelected}
@@ -101,7 +111,6 @@ class Trail extends React.Component{
                                     <Daylight weather={weather}/>  
                             )
                         }
-                        
                     </div>
                     <div className="trail-lower-right">
                         <div className="trail-map">
@@ -145,11 +154,8 @@ class Trail extends React.Component{
                                     })
                                 }
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
             </div>
         )
