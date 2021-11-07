@@ -1,3 +1,4 @@
+@import "../base/fonts.scss";
 .search-container{
     height: 35px;
     width: 288px;
@@ -5,6 +6,7 @@
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     background-color: white;
+    position: relative;
 
     input{
         border: 0px;
@@ -18,6 +20,12 @@
     input::placeholder{
             color: rgb(177, 177, 177);
     }
+
+    input:focus + .basic-search-dropdown{
+        display: block;
+    }
+
+    
 
 }
 
@@ -44,4 +52,115 @@
 
 .flex-search-container{
     display: flex;
+}
+
+.basic-search-dropdown{
+    position: absolute;
+    top: 36px;
+    width: 325px;
+    // height: 400px;
+    background-color: white;
+    // border: 1px solid black;
+    border: 1px solid lightgray;
+    border-top: 0px;
+    left: -1px;
+    
+
+    display: none;
+
+    &:hover{
+        display: block;
+    }
+
+}
+
+.search-flattened{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.basic-search-item{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    cursor: pointer;
+
+    img{
+        height: 20px;
+        width: auto;
+        filter: brightness(0) invert(1);
+
+    }
+    &:hover{
+        background-color: #428A13;
+        img{
+            filter: none;
+        }
+        .basic-search-park-wrap{
+            background-color: white;
+        }
+        .basic-search-trail-wrap{
+            background-color: white;
+        }
+        .basic-search-text{
+            h1{
+                color: white;
+            }
+            p{
+                color: white;
+            }
+            
+        }
+    }
+}
+
+.basic-search-park-wrap{
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.basic-search-trail-wrap{
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    background-color: #428A13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.basic-search-text{
+    font-family: $rubik;
+    font-weight: 100;
+    h1{
+        color: #414141;
+        font-size: 13px;
+    }
+
+    p{
+        color: #686868;
+        font-size: 11px;
+
+    }
+
+}
+
+.basic-search-item{
+    div{
+        margin-left: 7px;
+    }
+}
+    
+
+.basic-search-item-div{
+    &:first-child{
+        margin-top: 4px;
+    }
 }
