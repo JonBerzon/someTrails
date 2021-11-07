@@ -5,6 +5,8 @@ import Root from "./components/root"
 import { login, logout, signup } from "./actions/session_actions";
 import { fetchUsers } from "./actions/user_actions";
 import { fetchParks } from "./actions/park_actions";
+// import { fetchWeather, weatherResponse } from "./util/weather_api_util";
+import { fetchWeather } from "./actions/weather_actions"
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.login = login
     window.fetch = fetchUsers
     window.fetchParks = fetchParks
+    window.fetchWeather = fetchWeather
 
    
 

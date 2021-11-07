@@ -1,0 +1,185 @@
+@import "../base/fonts.scss";
+
+.trail-div{
+    margin: auto;
+    font-family: $rubik;
+    max-width: 970px;
+    width: 97vw;
+}
+
+.trail-bg-color{
+    background-color: #f2f2f2;
+}
+
+.trail-lower-container{
+    margin: auto;
+    max-width: 968px;
+    width: 97vw;
+    // height: 100vw;
+    background-color: white;
+    border: 1px solid #b1b1b1;
+    display: flex;
+    font-family: $rubik;
+
+}
+
+.trail-lower-left{
+    width: 67%;
+    // height: 100vw;
+    
+}
+
+.trail-lower-right{
+    width: 33%;
+    // height: 100vw;
+    border-left: 1px solid #d2d2d2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trail-description{
+    font-size: 17px;
+    color: #414141;
+    font-weight: 100;
+    margin: 20px;
+    line-height: 25px;
+    hr{
+        margin-top: 20px;
+    }
+}
+
+.trail-map{
+    margin-top: 10px;
+}
+
+.trail-stats-div{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-left: 3%;
+}
+.trail-stats{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    color: #414141;
+
+    h1{
+        font-weight: 100;
+        font-size: 12px;
+    }
+    h2{
+        margin-top: 5px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+}
+
+.trail-weather-div{
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    margin-top: 20px;
+    div{
+        margin-left: 5px;
+        width: 20%;
+        text-align: center;
+
+        h1{
+            font-weight: 100;
+            font-size: 14px;
+        }
+    }
+}
+
+.weather-header{
+    height: 60px;
+    background-color: #e6e6e6;
+    margin-top: 20px;
+    display: flex;
+    // align-items: center;
+    h1{
+        cursor: pointer;
+         font-size: 18px;
+    margin-left: 20px;
+    margin-right: 30px;
+    font-weight: 500; 
+    padding: 18px 0px 18px 0px;
+    }
+    
+}
+
+.trail-nonselected{
+    color: #414141;
+
+   &:hover{
+       color: #69a041;
+   }
+}
+
+.trail-selected{
+    color: #428a13;   
+    border-bottom: 2px solid #428a13;
+}
+
+.trail-dlight{
+    height: 50px;
+    width: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.trail-nearby{
+    width: 100%;
+
+    h1{
+        margin-top: 30px;
+        margin-left: 10px;
+        font-family: $rubik;
+        font-weight: 500;
+        font-size: 18px;
+        color: #414141;
+    }
+}
+
+.trail-nearby-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.trail-descriptors{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+.trail-descriptor-index{
+    font-family: $rubik;
+    font-weight: 100;
+    font-size: 14px;
+    border: 1px solid #428a13;
+    color: #428a13;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin-left: 6px;
+    margin-top: 10px;
+}
+
+
+@media only screen and (max-width: 940px){
+    .trail-lower-right{
+        display: none;
+    }
+
+    .trail-lower-left{
+        width: 100%;
+    }
+}

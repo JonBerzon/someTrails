@@ -1,5 +1,5 @@
 import React from "react";
-import BasicSearch from "./basic_search";
+import BasicSearchContainer from "./basic_search_container";
 
 class BasicHeader extends React.Component{
     constructor(props){
@@ -22,7 +22,7 @@ class BasicHeader extends React.Component{
                         }
                     </div>
                     <div className="basic-header-search">
-                        <BasicSearch />
+                        <BasicSearchContainer />
                     </div>
                 </div>
                 <hr className="smaller-hr"/>
