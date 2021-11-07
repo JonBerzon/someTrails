@@ -3,19 +3,21 @@ import BasicHeader from "../reusable/basic_header";
 import { Link } from "react-router-dom";
 import TrailHeader from "./trail_header";
 import Map from "../map/map";
-import { fetchWeather, weatherResponse } from "../../util/weather_api_util";
 import TrailPreview from "./trail_preview";
 import Weather from "../reusable/weather";
 import Daylight from "../reusable/daylight";
+import ReviewContainer from "../reviews/review_container";
 
 class Trail extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            selected: "weather"
+            selected: "weather",
+            selected2: "reviews"
         }
         this.toPark = this.toPark.bind(this)
         this.switchSelected = this.switchSelected.bind(this)
+        this.switchSelected2 = this.switchSelected2.bind(this)
         this.toTrail = this.toTrail.bind(this)
     }
 
@@ -33,10 +35,15 @@ class Trail extends React.Component{
         }
     }
   
-    switchSelected(){
-        
+    switchSelected(type){
         this.setState({
-            selected: this.state.selected === "weather" ? "daylight" : "weather"
+            selected: type
+        })
+    }
+
+    switchSelected2(type) {
+        this.setState({
+            selected2: type
         })
     }
 
@@ -97,10 +104,10 @@ class Trail extends React.Component{
 
 
                         <div className="weather-header">
-                            <h1 onClick={this.switchSelected}
+                            <h1 onClick={() => this.switchSelected("weather")}
                                 className={this.state.selected === "weather" ? "trail-selected" : "trail-nonselected"}>
                                 Weather</h1>
-                            <h1 onClick={this.switchSelected}
+                            <h1 onClick={() => this.switchSelected("daylight")}
                                 className={this.state.selected === "daylight" ? "trail-selected" : "trail-nonselected"}>
                                 Daylight</h1>
                         </div>
@@ -111,7 +118,34 @@ class Trail extends React.Component{
                                     <Daylight weather={weather}/>  
                             )
                         }
+
+                        <div className="weather-header">
+                            <h1
+                                onClick={() => this.switchSelected2("reviews")}
+                                className={this.state.selected2 === "reviews" ? "trail-selected" : "trail-nonselected"}>
+                                Reviews</h1>
+                            <h1
+                                onClick={() => this.switchSelected2("photos")}
+                                className={this.state.selected2 === "photos" ? "trail-selected" : "trail-nonselected"}>
+                                Photos</h1>
+                        </div>
+                        {
+                            this.state.selected2 === "reviews" ? (
+                                <div>
+                                    <ReviewContainer />
+                                    <ReviewContainer />
+                                    <ReviewContainer />
+                                    <ReviewContainer />
+                                </div>
+                            ) : (
+                                <h1>photos</h1>
+                            )
+                        }
                     </div>
+                    
+
+
+
                     <div className="trail-lower-right">
                         <div className="trail-map">
                             <Map

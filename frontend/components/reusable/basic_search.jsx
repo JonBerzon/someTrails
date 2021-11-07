@@ -57,7 +57,7 @@ class BasicSearch extends React.Component{
                             this.props.parks.map(park => {
                                 if (park.name.toLowerCase().startsWith(this.state.search.toLowerCase())) {
                                     return (
-                                        <div className="basic-search-item-div">
+                                        <div key={park.id} className="basic-search-item-div">
                                             <li onClick={() => this.toPark(park.id)} className="basic-search-item">
                                                 <div className="basic-search-park-wrap">
                                                     <img src={window.orangeTree} />
@@ -78,7 +78,7 @@ class BasicSearch extends React.Component{
                             this.props.trails.map(trail => {
                                 if (trail.name.toLowerCase().startsWith(this.state.search.toLowerCase())) {
                                     return (
-                                        <div className="">
+                                        <div key={trail.id} className="">
                                             <li onClick={() => this.toTrail(trail.id)} className="basic-search-item">
                                                 <div className="basic-search-trail-wrap">
                                                     <img src={window.flag} />

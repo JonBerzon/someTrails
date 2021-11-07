@@ -1,0 +1,81 @@
+@import "../base/fonts.scss";
+
+.review-left-div{
+    height: 60px;
+    width: 60px;
+    background-color:  #ebebeb;
+    border-radius: 50%;
+    position: relative;
+
+    img{
+        height: 30px;
+        width: auto;
+        margin-right: 10px;
+        position: absolute;
+        top: 25%;
+        left: 26%;
+    }
+}
+
+.review-upper-flex{
+    display: flex;
+    align-items: center;
+}
+
+.review-right-inner-div{
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    img{
+        height: 16px;
+        width: auto;
+        margin-right: 10px;
+    }
+    p{
+        font-weight: 100;
+        color: #767676;
+        font-size: 14px;
+    }
+}
+
+.review-bottom-descriptor{
+    display: flex;
+    margin-top: 15px;
+    p{
+        font-family: $rubik;
+        font-weight: 100;
+        font-size: 12px;
+        border: 1px solid #428a13;
+        color: #428a13;
+        border-radius: 8px;
+        padding: 4px 12px;
+        margin-right: 6px;
+        // margin-top: 10px;
+    }
+    
+}
+
+.review-description{
+    margin-top: 15px;
+    p{
+        font-weight: 100;
+        color: #414141;
+        line-height: 25px;
+
+    }
+}
+
+.review-div{
+    margin-left: 25px;
+    margin-top: 20px;
+    width: 90%;
+   
+}
+
+.review-right-div{
+    margin-left: 10px;
+    h1{
+        font-weight: 500;
+        color: #414141;
+    }
+}

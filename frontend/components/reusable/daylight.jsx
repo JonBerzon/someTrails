@@ -21,7 +21,7 @@ class Daylight extends React.Component{
                 </div>
         }
         return(
-            <div>
+            <div className="daylight-div">
                 {dlight}
             </div>
         )

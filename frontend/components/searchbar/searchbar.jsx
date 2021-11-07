@@ -53,7 +53,7 @@ class Searchbar extends React.Component{
                                     this.props.parks.map(park => {
                                         if (park.name.toLowerCase().startsWith(this.state.search.toLowerCase())){
                                             return (
-                                                <div className="item-div">
+                                                <div key={park.id} className="item-div">
                                                     <li onClick={() => this.toPark(park.id)} className="searchbar-item">
                                                         <div className="searchbar-item-img">
                                                             <img src={window.tree} />
@@ -75,7 +75,7 @@ class Searchbar extends React.Component{
                                     this.props.trails.map(trail => {
                                         if (trail.name.toLowerCase().startsWith(this.state.search.toLowerCase())) {
                                             return (
-                                                <div className="item-div">
+                                                <div key={trail.id} className="item-div">
                                                     <li onClick={() => this.toTrail(trail.id)} className="searchbar-item">
                                                         <div className="searchbar-item-img">
                                                             <img src={window.flag} />
