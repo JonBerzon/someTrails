@@ -100,13 +100,17 @@
 }
 
 @media only screen and (max-width: 700px){
-     .fake-searchbar{
-     width: 97vw;
- }
+    .fake-searchbar{
+         width: 98vw;
+    }
 
- .searchbar{
-     width: 70%;
- }
+    .fake-searchbar1{
+         width: 98vw;
+    }
+
+    .searchbar{
+        width: 70%;
+    }
 }
 
 @media only screen and (max-width: 591px){

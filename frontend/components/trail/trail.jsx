@@ -28,7 +28,7 @@ class Trail extends React.Component{
         if (this.props.trail != prevProps.trail){
             this.props.fetchWeather({
                 lat: this.props.trail.latitude,
-                long: this.props.trail.long
+                long: this.props.trail.longitude
             })
         }
     }

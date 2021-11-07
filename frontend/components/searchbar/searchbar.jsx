@@ -39,7 +39,6 @@ class Searchbar extends React.Component{
     }
 
     render(){
-        console.log(this.props)
         if (!this.props.trails || !this.props.parks) return null;
         return(
             <div>

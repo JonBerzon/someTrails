@@ -26,13 +26,22 @@ rocky = Park.create!(name: "Rocky Mountain National Park", latitude: 40.343182, 
 Trail.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('trails')
 emerald = Trail.create!(park_id: rocky.id, name: "Emerald Lake Trail", duration: "1 h 46 m", difficulty: "moderate", length: "3.2 mi", elevation: "698 ft", route: "Out & back", latitude: 40.31195, longitude: -105.64567, zoom: 17, directions: "https://www.google.com/maps/dir//40.31195,-105.64567/@40.3114007,-105.6465976,18.14z", description: "Emerald Lake Trail is a 3.2 mile heavily trafficked out and back trail located near Estes Park, Colorado that features a lake and is rated as moderate. The trail is primarily used for hiking and snowshoeing and is best used from June until October." )
-emerald.photos.attach(io: File.open('app/assets/images/aws/RMNP3.jpg', ), filename: 'RMNP1.jpg')
+emerald.photos.attach(io: File.open('app/assets/images/aws/RMNP3.jpg', ), filename: 'RMNP3.jpg')
 
 sky = Trail.create!(park_id: rocky.id, name: "Sky Pond Trail", duration: "4 h 58 m", difficulty: "hard", length: "9.4 mi", elevation: "1,758 ft", route: "Out & back", latitude: 40.31046, longitude: -105.64036, zoom: 17, directions: "https://www.google.com/maps/dir//40.31052,-105.6403/@40.3110612,-105.6432294,16.9z", description: "Sky Pond Trail is a 9.4 mile heavily trafficked out and back trail located near Estes Park, Colorado that features a lake and is rated as difficult. The trail is primarily used for hiking and snowshoeing and is best used from June until October." )
 sky.photos.attach(io: File.open('app/assets/images/aws/RMNP2.jpg', ), filename: 'RMNP2.jpg')
 
 alberta = Trail.create!(park_id: rocky.id, name: "Alberta Falls Trail", duration: "1 h 02 m", difficulty: "easy", length: "1.6 mi", elevation: "232 ft", route: "Out & back", latitude: 40.31046, longitude: -105.64036, zoom: 17, directions: "https://www.google.com/maps/dir//40.31052,-105.6403/@40.3110612,-105.6432294,16.9z", description: "Alberta Falls Trail is a 1.6 mile heavily trafficked out and back trail located near Estes Park, Colorado that features a waterfall and is good for all skill levels. The trail is primarily used for hiking, walking, running, horses, and snowshoeing and is best used from May until October. Horses are also able to use this trail." )
-alberta.photos.attach(io: File.open('app/assets/images/aws/RMNP1.jpg', ), filename: 'RMNP3.jpg')
+alberta.photos.attach(io: File.open('app/assets/images/aws/RMNP1.jpg', ), filename: 'RMNP1.jpg')
+
+gem = Trail.create!(park_id: rocky.id, name: "Gem Lake Trail", duration: "1 h 55 m", difficulty: "moderate", length: "3.1 mi", elevation: "994 ft", route: "Out & back", latitude: 40.39645, longitude: -105.51303, zoom: 17, directions: "https://www.google.com/maps/dir//40.39645,-105.51303/@40.3965461,-105.5478323,13z", description: "Gem Lake Trail is a 3.1 mile heavily trafficked out and back trail located near Estes Park, Colorado that features a lake and is rated as moderate. The trail is primarily used for hiking and is best used from May until October." )
+gem.photos.attach(io: File.open('app/assets/images/aws/RMNP4.jpg', ), filename: 'RMNP4.jpg')
+
+
+chasm = Trail.create!(park_id: rocky.id, name: "Chasm Lake", duration: "5 h 16 m", difficulty: "hard", length: "8.8 mi", elevation: "2,542 ft", route: "Out & back", latitude: 40.2715862, longitude: -105.5566217, zoom: 17, directions: "https://www.google.com/maps/dir//Longs+Peak+Trailhead,+1398+Longs+Peak+Rd,+Estes+Park,+CO+80517/@40.2715368,-105.5568251,21z/data=!4m9!4m8!1m0!1m5!1m1!1s0x876963050c48bb31:0x41fdf2cd2e219144!2m2!1d-105.5565693!2d40.2713991!3e2", description: "Chasm Lake is a 8.8 mile heavily trafficked out and back trail located near Estes Park, Colorado that features a waterfall and is rated as difficult. The trail is primarily used for hiking, horses, and snowshoeing and is best used from June until October. Horses are also able to use this trail." )
+chasm.photos.attach(io: File.open('app/assets/images/aws/RMNP5.jpg', ), filename: 'RMNP5.jpg')
+
+
 
 Descriptor.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('descriptors')
@@ -105,6 +114,33 @@ alberta11 = TrailDescriptor.create!(trail_id: alberta.id, descriptor_id: dogs.id
 alberta12 = TrailDescriptor.create!(trail_id: alberta.id, descriptor_id: horse.id)
 alberta13 = TrailDescriptor.create!(trail_id: alberta.id, descriptor_id: walk.id)
 alberta14 = TrailDescriptor.create!(trail_id: alberta.id, descriptor_id: run.id)
+
+gem0 = TrailDescriptor.create!(trail_id: gem.id, descriptor_id: hiking.id)
+gem1 = TrailDescriptor.create!(trail_id: gem.id, descriptor_id: forest.id)
+gem2 = TrailDescriptor.create!(trail_id: gem.id, descriptor_id: lake.id)
+gem3 = TrailDescriptor.create!(trail_id: gem.id, descriptor_id: river.id)
+gem4 = TrailDescriptor.create!(trail_id: gem.id, descriptor_id: views.id)
+gem5 = TrailDescriptor.create!(trail_id: gem.id, descriptor_id: flowers.id)
+gem6 = TrailDescriptor.create!(trail_id: gem.id, descriptor_id: wildlife.id)
+gem7 = TrailDescriptor.create!(trail_id: gem.id, descriptor_id: rocky.id)
+gem8 = TrailDescriptor.create!(trail_id: gem.id, descriptor_id: scramble.id)
+gem9 = TrailDescriptor.create!(trail_id: gem.id, descriptor_id: fee.id)
+gem10 = TrailDescriptor.create!(trail_id: gem.id, descriptor_id: dogs.id)
+
+chasm0 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: hiking.id)
+chasm1 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: horse.id)
+chasm2 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: snow.id)
+chasm3 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: forest.id)
+chasm4 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: lake.id)
+chasm5 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: river.id)
+chasm6 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: views.id)
+chasm7 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: waterfall.id)
+chasm8 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: flowers.id)
+chasm9 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: wildlife.id)
+chasm10 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: rocky.id)
+chasm11 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: scramble.id)
+chasm12 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: fee.id)
+chasm13 = TrailDescriptor.create!(trail_id: chasm.id, descriptor_id: dogs.id)
 
 
 
