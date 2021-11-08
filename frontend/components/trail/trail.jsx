@@ -66,6 +66,7 @@ class Trail extends React.Component{
         let arr = [park.country, park.state, park.name, trail.name]
         let { weather }  = this.props
 
+
         return(
             <div className="trail-bg-color">
                 <div className="trail-div">
@@ -132,10 +133,12 @@ class Trail extends React.Component{
                         {
                             this.state.selected2 === "reviews" ? (
                                 <div>
-                                    <ReviewContainer />
-                                    <ReviewContainer />
-                                    <ReviewContainer />
-                                    <ReviewContainer />
+                                    {
+                                        trail.reviews.map(review =>{
+                                            return <ReviewContainer key={review.id} review={review} />
+                                        })
+                                    }
+                                    
                                 </div>
                             ) : (
                                 <h1>photos</h1>

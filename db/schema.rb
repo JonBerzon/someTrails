@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_06_183029) do
+ActiveRecord::Schema.define(version: 2021_11_08_000307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,16 @@ ActiveRecord::Schema.define(version: 2021_11_06_183029) do
     t.integer "zoom"
     t.text "directions"
     t.index ["name"], name: "index_parks_on_name"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "trail_id", null: false
+    t.date "date", null: false
+    t.text "description"
+    t.integer "rating", null: false
+    t.index ["trail_id"], name: "index_reviews_on_trail_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "trail_descriptors", force: :cascade do |t|

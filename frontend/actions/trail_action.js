@@ -8,7 +8,7 @@ const receiveAllTrails = trails => ({
     trails
 })
 
-const receiveTrail = trail => ({
+export const receiveTrail = trail => ({
     type: FETCH_TRAIL,
     trail
 })

@@ -9,6 +9,8 @@ class User < ApplicationRecord
     # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } #validates email format
     after_initialize :ensure_session_token
 
+    has_many :reviews
+
     
 
     def self.find_by_credentials(email, password)
