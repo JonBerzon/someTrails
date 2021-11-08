@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { logout } from "../../actions/session_actions"
 import Navbar from "./navbar"
 import { withRouter } from "react-router"
+import { fetchParks } from "../../actions/park_actions"
 
 
 // const mSTP = state => ({
@@ -28,7 +29,8 @@ const mSTP = state => {
 
 
 const mDTP = dispatch => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchParks: () => dispatch(fetchParks())
 })
 
 export default withRouter(connect(mSTP,mDTP)(Navbar))

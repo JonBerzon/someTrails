@@ -8,11 +8,12 @@ import { fetchWeather } from "../../actions/weather_actions"
 const mSTP = (state, ownProps) => ({
     trails: Object.values(state.entities.trails).filter(trail => trail.park_id === state.entities.trails[ownProps.match.params.id].park_id),
     trail: state.entities.trails[ownProps.match.params.id],
-    weather: state.entities.weather
+    parks: state.entities.parks,
+    weather: state.entities.weather,
+    reviews: Object.values(state.entities.reviews).filter(review => state.entities.trails[ownProps.match.params.id].reviews.includes(review.id))
 })
 
 const mDTP = dispatch => ({
-    fetchTrails: () => dispatch(fetchTrails()),
     fetchWeather: (coord) => dispatch(fetchWeather(coord))
 })
 

@@ -6,7 +6,8 @@ class Review extends React.Component{
     }
 
     render(){
-        let { fname, lname, date, description, activity} = this.props.review
+        let {date, description, activity} = this.props.review
+        let {fname, lname} = this.props.user
         return(
             <div className="review-div">
                 <div className="review-upper-flex">

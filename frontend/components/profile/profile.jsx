@@ -12,9 +12,7 @@ class Profile extends React.Component{
         this.setFocus = this.setFocus.bind(this)    
     }
 
-    componentDidMount(){
-        this.props.fetchUsers();
-    }
+  
 
     componentDidUpdate(prevProps){
         if (this.props.currentProfile !== prevProps.currentProfile) {

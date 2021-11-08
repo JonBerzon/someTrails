@@ -11,6 +11,10 @@ class Navbar extends React.Component{
 
     }
 
+    componentDidMount(){
+        this.props.fetchParks()
+    }
+
     handleLogout(){
         this.props.logout(this.props.currentUser)
 

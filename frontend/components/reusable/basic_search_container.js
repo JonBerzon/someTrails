@@ -5,13 +5,12 @@ import {fetchTrails} from "../../actions/trail_action"
 import BasicSearch from "./basic_search";
 
 const mSTP = state => ({
-    parks: Object.values(state.entities.parks),
-    trails: Object.values(state.entities.trails)
+    parks: state.entities.parks,
+    trails: state.entities.trails
 })
 
 const mDTP = dispatch => ({
-    fetchParks: () => dispatch(fetchParks()),
-    fetchTrails: () => dispatch(fetchTrails())
+    fetchParks: () => dispatch(fetchParks())
 })
 
 export default withRouter(connect(mSTP,mDTP)(BasicSearch))

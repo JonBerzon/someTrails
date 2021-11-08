@@ -14,10 +14,7 @@ class Park extends React.Component{
         this.handleClick = this.handleClick.bind(this)
     }
 
-    componentDidMount(){
-        this.props.fetchPark(this.props.match.params.id);
-        this.props.fetchTrails();    
-    }
+   
 
     
 
@@ -42,15 +39,14 @@ class Park extends React.Component{
 
         let arr = [`${country}`, `${state}`, `${name}`]
         let {trails} = this.props
-        console.log(this.props.trails)
         return(
             <div className="park-div">
                 <hr />
                 <BasicHeader arr={arr}/>
                 <div className="park-image-header">
-                    <img onClick={() => this.handleClick(trails[0].id)} src={trails[0].photosUrl[0]} />
-                    <img onClick={() => this.handleClick(trails[1].id)} src={trails[1].photosUrl[0]} />
-                    <img onClick={() => this.handleClick(trails[2].id)} src={trails[2].photosUrl[0]} />
+                    <img onClick={() => this.handleClick(Object.values(trails)[0].id)} src={Object.values(trails)[0].photosUrl[0]} />
+                    <img onClick={() => this.handleClick(Object.values(trails)[1].id)} src={Object.values(trails)[1].photosUrl[0]} />
+                    <img onClick={() => this.handleClick(Object.values(trails)[2].id)} src={Object.values(trails)[2].photosUrl[0]} />
                     
                 </div>
                 <div className="park-summary-div">
@@ -112,7 +108,7 @@ class Park extends React.Component{
                 </div>
                 <div className="park-bottom-trails">
                     <h1 >Top Trails (222)</h1>
-                    {trails.map((trail, idx)=>{
+                    {Object.values(trails).map((trail, idx)=>{
                         return (
                             <div key={ trail.id }>
                                 <ParkTrail handleClick={this.handleClick} trail={trail} idx={idx} park={park}/>

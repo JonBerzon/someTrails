@@ -1,18 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchPark } from "../../actions/park_actions";
+import { fetchParks } from "../../actions/park_actions";
 import { fetchTrails } from "../../actions/trail_action";
 import Park from "./park";
 
 const mSTP = (state, ownProps) => ({
     park: state.entities.parks[ownProps.match.params.id],
-    trails: Object.values(state.entities.trails)
+    trails: state.entities.trails
 })
 
-const mDTP = dispatch => ({
-    fetchPark: parkId => dispatch(fetchPark(parkId)),
-    fetchTrails: () => dispatch(fetchTrails())
-})
 
-export default  withRouter(connect(mSTP, mDTP)(Park))
+
+export default  withRouter(connect(mSTP)(Park))

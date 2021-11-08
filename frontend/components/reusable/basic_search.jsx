@@ -15,18 +15,12 @@ class BasicSearch extends React.Component{
 
     }
 
-    componentDidMount(){
-        this.props.fetchParks()
-        this.props.fetchTrails()
-    }
 
     toPark(id) {
-        console.log("topark")
         this.props.history.push(`/park/${id}`)
     }
 
     toTrail(id) {
-        console.log("totrail")
         this.props.history.push(`/trail/${id}`)
     }
 
@@ -54,7 +48,7 @@ class BasicSearch extends React.Component{
                     />
                     <div className="basic-search-dropdown">
                         {
-                            this.props.parks.map(park => {
+                            Object.values(this.props.parks).map(park => {
                                 if (park.name.toLowerCase().startsWith(this.state.search.toLowerCase())) {
                                     return (
                                         <div key={park.id} className="basic-search-item-div">
@@ -75,7 +69,7 @@ class BasicSearch extends React.Component{
                             )
                         }
                         {
-                            this.props.trails.map(trail => {
+                            Object.values(this.props.trails).map(trail => {
                                 if (trail.name.toLowerCase().startsWith(this.state.search.toLowerCase())) {
                                     return (
                                         <div key={trail.id} className="">
@@ -85,7 +79,7 @@ class BasicSearch extends React.Component{
                                                 </div>
                                                 <div className="basic-search-text">
                                                     <h1>{trail.name}</h1>
-                                                    <p>{trail.park.name}, {trail.park.state}</p>
+                                                    <p>{this.props.parks[trail.park_id].name}, {this.props.parks[trail.park_id].state}</p>
                                                 </div>
                                             </li>
                                         </div>

@@ -23,7 +23,12 @@ class Trail extends React.Component{
 
     componentDidMount(){
         window.scrollTo(0, 0)
-        this.props.fetchTrails()
+        if (this.props.trail){
+            this.props.fetchWeather({
+                lat: this.props.trail.latitude,
+                long: this.props.trail.longitude
+            })
+        }
     }
 
     componentDidUpdate(prevProps){
@@ -60,12 +65,15 @@ class Trail extends React.Component{
     render() {
         if (!this.props.weather) return null;
         if (!this.props.trails) return null;
-        if (!this.props.trail) return null;    
+        if (!this.props.trail) return null; 
+        if (!this.props.reviews) return null;
+        if (!this.props.parks) return null;
+        
+
         let {trail} = this.props
-        let {park} = trail
+        let park = this.props.parks[trail.park_id]
         let arr = [park.country, park.state, park.name, trail.name]
         let { weather }  = this.props
-
 
         return(
             <div className="trail-bg-color">
@@ -134,8 +142,8 @@ class Trail extends React.Component{
                             this.state.selected2 === "reviews" ? (
                                 <div>
                                     {
-                                        trail.reviews.map(review =>{
-                                            return <ReviewContainer key={review.id} review={review} />
+                                        Object.values(this.props.reviews).map(review =>{
+                                            if (trail.reviews.includes(review.id)) return <ReviewContainer key={review.id} review={review} />
                                         })
                                     }
                                     

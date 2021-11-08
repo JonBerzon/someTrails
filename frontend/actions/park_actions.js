@@ -1,11 +1,12 @@
 import * as ParkApiUtil from "../util/park_api_util"
 
-export const FETCH_ALL_PARKS = "FETCH_ALL_PARKS"
+// export const FETCH_ALL_PARKS = "FETCH_ALL_PARKS"
+export const FETCH_PAYLOAD = "FETCH_PAYLOAD"
 export const FETCH_PARK = "FETCH_PARK"
 
-const receiveAllParks = parks => ({
-    type: FETCH_ALL_PARKS,
-    parks
+const receiveAllParks = payload => ({
+    type: FETCH_PAYLOAD,
+    payload
 })
 
 const receivePark = park => ({
@@ -15,7 +16,7 @@ const receivePark = park => ({
 
 export const fetchParks = () => dispatch => {
     return ParkApiUtil.fetchParks()
-        .then(parks => dispatch(receiveAllParks(parks)))
+        .then(payload => dispatch(receiveAllParks(payload)))
 }
 
 export const fetchPark = parkId => dispatch => {

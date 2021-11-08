@@ -3,12 +3,13 @@ import React from "react";
 import Review from "./review";
 
 
-const mSTP = state => ({
-    
+const mSTP = (state, ownProps) => ({
+    user: state.entities.users[ownProps.review.user_id],
+    review: ownProps.review
 })
 
 const mDTP = dispatch => ({
 
 })
 
-export default connect(null)(Review)
+export default connect(mSTP)(Review)

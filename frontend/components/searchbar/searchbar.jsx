@@ -15,18 +15,12 @@ class Searchbar extends React.Component{
         this.setSearch = this.setSearch.bind(this)
     }
 
-    componentDidMount(){
-        this.props.fetchParks();
-        this.props.fetchTrails();
-    }
 
     toPark(id){
-        console.log("topark")
         this.props.history.push(`/park/${id}`)
     }
 
     toTrail(id){
-        console.log("totrail")
         this.props.history.push(`/trail/${id}`)
     }
 
@@ -40,6 +34,7 @@ class Searchbar extends React.Component{
 
     render(){
         if (!this.props.trails || !this.props.parks) return null;
+        // debugger
         return(
             <div>
                 <div className="searchbar-div">
@@ -50,7 +45,7 @@ class Searchbar extends React.Component{
                             <div className="searchbar-contents">
                                 <hr />
                                 {
-                                    this.props.parks.map(park => {
+                                    Object.values(this.props.parks).map(park => {
                                         if (park.name.toLowerCase().startsWith(this.state.search.toLowerCase())){
                                             return (
                                                 <div key={park.id} className="item-div">
@@ -72,7 +67,7 @@ class Searchbar extends React.Component{
                                     )
                                 }
                                 {
-                                    this.props.trails.map(trail => {
+                                    Object.values(this.props.trails).map(trail => {
                                         if (trail.name.toLowerCase().startsWith(this.state.search.toLowerCase())) {
                                             return (
                                                 <div key={trail.id} className="item-div">
@@ -82,7 +77,7 @@ class Searchbar extends React.Component{
                                                         </div>
                                                         <div className="searchbar-item-text">
                                                             <h1>{trail.name}</h1>
-                                                            <p>{trail.park.name}, {trail.park.state}, {trail.park.country}</p>
+                                                            <p>{this.props.parks[trail.park_id].name}, {this.props.parks[trail.park_id].state}, {this.props.parks[trail.park_id].country}</p>
                                                         </div>
                                                     </li>
                                                     <hr />
