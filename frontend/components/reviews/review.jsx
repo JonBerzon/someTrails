@@ -6,7 +6,7 @@ class Review extends React.Component{
     }
 
     render(){
-        let { fname, lname, date, description} = this.props.review
+        let { fname, lname, date, description, activity} = this.props.review
         return(
             <div className="review-div">
                 <div className="review-upper-flex">
@@ -22,7 +22,7 @@ class Review extends React.Component{
                     </div>
                 </div>
                 <div className="review-bottom-descriptor">
-                    <p>Hike</p>
+                    <p>{activity}</p>
                     <p>Bugs</p>
                     <p>Flooded</p>
                 </div>

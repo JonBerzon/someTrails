@@ -12,10 +12,10 @@
             json.date review.date 
             json.description review.description
             json.rating review.rating
+            json.activity review.activity
         end
 
     end
 
-
-
 end
+
