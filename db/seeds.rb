@@ -178,6 +178,68 @@ revCh4 = Review.create!(user_id: user4.id, activity: "Snowshoeing", trail_id: ch
 revCh5 = Review.create!(user_id: user5.id, activity: "Snowshoeing", trail_id: chasm.id, date: "2021-01-01", rating: 5, description: "Got to trail head about 5:45 am, only a few cars in parking lot.  Started the hike around 6:30 when it was light enough to see without headlamp.  Great hike, well maintained and marked trail.  Somewhere between moderate and difficult.  Lots of ice on scramble at end but still doable, even for us without crampons.  It was pretty cold at start and up top.  3 hours up, 2 hours back.  Parking lot was still only half full when we were leaving.  " )
 
 
+Condition.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('conditions')
+great = Condition.create!(name: "Great!")
+blow = Condition.create!(name: "Blowdown")
+bridge = Condition.create!(name: "Bridge out")
+bugs = Condition.create!(name: "Bugs")
+closed = Condition.create!(name: "Closed")
+fee = Condition.create!(name: "Fee")
+flood = Condition.create!(name: "Flooded")
+icy = Condition.create!(name: "Icy")
+muddy = Condition.create!(name: "Muddy")
+shade = Condition.create!(name: "No shade")
+trail = Condition.create!(name: "Off trail")
+grown = Condition.create!(name: "Over grown")
+property = Condition.create!(name: "Private property")
+rocky = Condition.create!(name: "Rocky")
+scramble = Condition.create!(name: "Scramble")
+snow = Condition.create!(name: "Snow")
+washed = Condition.create!(name: "Washed out")
+
+ReviewCondition.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('review_conditions')
+
+rcEm11 = ReviewCondition.create!(review_id: revEm1.id, condition_id: great.id)
+rcEm12 = ReviewCondition.create!(review_id: revEm1.id, condition_id: snow.id)
+rcEm21 = ReviewCondition.create!(review_id: revEm2.id, condition_id: trail.id)
+rcEm22 = ReviewCondition.create!(review_id: revEm2.id, condition_id: shade.id)
+rcEm41 = ReviewCondition.create!(review_id: revEm4.id, condition_id: scramble.id)
+rcEm51 = ReviewCondition.create!(review_id: revEm5.id, condition_id: rocky.id)
+
+rcSk11 = ReviewCondition.create!(review_id: revSk2.id, condition_id: shade.id)
+rcSk12 = ReviewCondition.create!(review_id: revSk3.id, condition_id: muddy.id)
+rcSk21 = ReviewCondition.create!(review_id: revSk1.id, condition_id: fee.id)
+rcSk22 = ReviewCondition.create!(review_id: revSk4.id, condition_id: bugs.id)
+rcSk41 = ReviewCondition.create!(review_id: revSk5.id, condition_id: great.id)
+rcSk51 = ReviewCondition.create!(review_id: revSk2.id, condition_id: rocky.id)
+
+rcAl11 = ReviewCondition.create!(review_id: revAl4.id, condition_id: washed.id)
+rcAl12 = ReviewCondition.create!(review_id: revAl4.id, condition_id: property.id)
+rcAl21 = ReviewCondition.create!(review_id: revAl3.id, condition_id: icy.id)
+rcAl22 = ReviewCondition.create!(review_id: revAl1.id, condition_id: closed.id)
+rcAl41 = ReviewCondition.create!(review_id: revAl2.id, condition_id: blow.id)
+rcAl51 = ReviewCondition.create!(review_id: revAl2.id, condition_id: great.id)
+
+rcGe11 = ReviewCondition.create!(review_id: revGe4.id, condition_id: scramble.id)
+rcGe12 = ReviewCondition.create!(review_id: revGe3.id, condition_id: fee.id)
+rcGe21 = ReviewCondition.create!(review_id: revGe2.id, condition_id: bridge.id)
+rcGe22 = ReviewCondition.create!(review_id: revGe4.id, condition_id: snow.id)
+rcGe41 = ReviewCondition.create!(review_id: revGe5.id, condition_id: trail.id)
+rcGe51 = ReviewCondition.create!(review_id: revGe5.id, condition_id: rocky.id)
+
+rcCh11 = ReviewCondition.create!(review_id: revCh2.id, condition_id: great.id)
+rcCh12 = ReviewCondition.create!(review_id: revCh2.id, condition_id: grown.id)
+rcCh21 = ReviewCondition.create!(review_id: revCh1.id, condition_id: icy.id)
+rcCh22 = ReviewCondition.create!(review_id: revCh1.id, condition_id: rocky.id)
+rcCh41 = ReviewCondition.create!(review_id: revCh1.id, condition_id: great.id)
+rcCh51 = ReviewCondition.create!(review_id: revCh4.id, condition_id: scramble.id)
+
+
+
+
+
 
 
 

@@ -2,6 +2,8 @@ import React from "react";
 import BasicHeader from "../reusable/basic_header";
 import Map from "../map/map";
 import ParkTrail from "../park_trail/park_trail";
+import Stars from "../reusable/stars";
+
 
 class Park extends React.Component{
     constructor(props){
@@ -36,9 +38,28 @@ class Park extends React.Component{
         let { park } = this.props;
         let {country, state, directions, name, description, acreage, latitude, longitude, zoom, contact} = park;
         let oppoVisibility = this.state.visibility === "visible" ? "hidden" : "visible";
+        let { trails } = this.props
 
+        let numReviews = 0
+        Object.values(trails).forEach(trail => numReviews += trail.reviews.length )
         let arr = [`${country}`, `${state}`, `${name}`]
-        let {trails} = this.props
+
+        let options = {
+            size:17,
+            isHalf: true,
+            edit: false
+        }
+        let avgRating = 0;
+        let count = 0;
+        this.props.reviews.forEach( review => {
+            count += 1;
+            avgRating += review.rating;
+        })
+        avgRating = avgRating / count;
+
+
+
+
         return(
             <div className="park-div">
                 <hr />
@@ -52,8 +73,11 @@ class Park extends React.Component{
                 <div className="park-summary-div">
                     <h1>{`Best Trails in ${name}`}</h1>
                     <div className="park-reviews">
-                        <img src={window.stars} alt="" />
-                        <p>{Math.floor(Math.random() * 50000)} Reviews</p>
+                        <div className="park-stars">
+                            <Stars options={options} rating={avgRating}/>
+                        </div>
+                        {/* <img src={window.stars} alt="" /> */}
+                        <p>{numReviews} Reviews</p>
                     </div>
                     <h2 className={this.state.visibility}>{description.split(" ").slice(0, 40).join(" ")}<span>....</span></h2>
                     <h2 className={oppoVisibility}>{description}</h2>
@@ -111,7 +135,7 @@ class Park extends React.Component{
                     {Object.values(trails).map((trail, idx)=>{
                         return (
                             <div key={ trail.id }>
-                                <ParkTrail handleClick={this.handleClick} trail={trail} idx={idx} park={park}/>
+                                <ParkTrail handleClick={this.handleClick} trail={trail} idx={idx} park={park} reviews={this.props.reviews}/>
                                 <br />
                             </div>
                         )

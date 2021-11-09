@@ -14,7 +14,7 @@ class TrailHeader extends React.Component{
                         <div className="trail-picture-stats">
                             <h2 className={trail.difficulty}>{trail.difficulty}</h2>
                             <img src={window.stars}/>
-                            <p>({Math.floor(Math.random() * 10000)})</p>
+                            <p>({trail.reviews.length})</p>
                         </div>
                         <h3>{park.name}</h3>
                     </div>

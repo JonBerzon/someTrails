@@ -16,7 +16,7 @@ class TrailPreview extends React.Component{
                 <div className="trail-preview-difficulty-div">
                     <span className={trail.difficulty}>{trail.difficulty}</span>
                     <img src={window.stars} />
-                    <p>({Math.round(Math.random() * 3000)})</p>
+                    <p>({trail.reviews.length})</p>
                 </div>
                 <div className="trail-preview-length-div">
                     <h3>Length: {trail.length}</h3>

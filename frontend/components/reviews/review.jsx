@@ -6,7 +6,7 @@ class Review extends React.Component{
     }
 
     render(){
-        let {date, description, activity} = this.props.review
+        let {date, description, activity, conditions} = this.props.review
         let {fname, lname} = this.props.user
         return(
             <div className="review-div">
@@ -24,8 +24,11 @@ class Review extends React.Component{
                 </div>
                 <div className="review-bottom-descriptor">
                     <p>{activity}</p>
-                    <p>Bugs</p>
-                    <p>Flooded</p>
+                    {
+                        conditions.map(condition =>{
+                            return <p>{condition}</p>
+                        })
+                    }
                 </div>
                 <div className="review-description">
                     <p>{description}</p>

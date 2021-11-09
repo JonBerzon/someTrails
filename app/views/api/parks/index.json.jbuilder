@@ -15,7 +15,7 @@
     end
     
 
-    park.trails.each do |trail|
+    park.trails.with_attached_photos.includes(:descriptors, :park, :reviews).each do |trail|
         json.trails do 
             json.set! trail.id do
                 json.extract! trail, :park_id, :id, :duration, :name, :difficulty, :length, :elevation, :route, :latitude, :longitude, :description, :zoom , :directions
@@ -26,17 +26,18 @@
                 end
             end
         end
-        trail.reviews.each do |review|
+        trail.reviews.includes(:conditions, :review_conditions).each do |review|
             json.reviews do 
                 json.set! review.id do
                     json.extract! review, :id, :date, :description, :activity, :rating, :user_id, :trail_id
+                    json.conditions review.conditions.map { |condition| condition.name}
                 end
             end
         end
     end
 end
 
-@users = User.all 
+@users = User.all.includes(:reviews) 
 @users.each do |user|
     json.users do
         json.set! user.id do

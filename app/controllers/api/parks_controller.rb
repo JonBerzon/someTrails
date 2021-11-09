@@ -1,7 +1,7 @@
 class Api::ParksController < ApplicationController
 
     def index 
-        @parks = Park.all
+        @parks = Park.all.includes(:trails)
         render :index 
     end
 

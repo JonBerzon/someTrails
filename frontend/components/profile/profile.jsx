@@ -1,27 +1,31 @@
 import React from "react";
 import BasicHeader from "../reusable/basic_header";
+import Stars from "../reusable/stars";
 
 
 class Profile extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            currentProfile: null,
             active: "profile"
         }
         this.setFocus = this.setFocus.bind(this)    
     }
 
-  
+    // componentDidMount(){
+    //     if (this.props.currentProfile){
+    //         this.setState({
+    //             currentProfile: this.props.currentProfile
+    //         })
 
-    componentDidUpdate(prevProps){
-        if (this.props.currentProfile !== prevProps.currentProfile) {
-            this.setState({
-                currentProfile: this.props.currentProfile
-            })
-        }
-        // debugger
-    }
+    //     }
+    // }
+
+    // componentDidUpdate(prevProps){
+    //     if (this.props.currentProfile !== prevProps.currentProfile) {
+            
+    //     }
+    // }
 
     setFocus(type){
         this.setState({
@@ -30,11 +34,16 @@ class Profile extends React.Component{
     }
 
     render(){
-        if (!this.state.currentProfile) return null;
-        let arr = ["Members", `${this.state.currentProfile.fname}`]
 
-        const { active, currentProfile} = this.state
-        const { currentUser } = this.props
+        if (!this.props.currentProfile) return null;
+        if (!this.props.currentProfile.created_at) return null;
+        let { active} = this.state
+        let { currentUser, currentProfile } = this.props
+        let arr = ["Members", `${currentProfile.fname}`]
+        // debugger
+        let rating = 4;
+
+        
         return(
             <div className="profile-div">
                 <hr />
@@ -78,6 +87,9 @@ class Profile extends React.Component{
                             </div>
                             <h3>{currentProfile.bio}</h3>
                             <h4>Favorite Activities</h4>
+                            
+        
+
                         </div>
                     </div>
                 </div>

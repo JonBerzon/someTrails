@@ -40,10 +40,8 @@
         font-weight: 300;
         color: rgb(85, 85, 85);
 
-        img{
-            height: 16px;
-            width: auto;
-            margin-right: 10px;
+        p{
+            align-self: flex-end;
         }
     }
 
@@ -213,4 +211,14 @@
            display: none;
        }
    }
+}
+
+.park-stars{
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    span{
+        margin-right: 5px;
+        
+    }
 }
