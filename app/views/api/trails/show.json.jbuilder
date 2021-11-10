@@ -1,6 +1,6 @@
-json.extract! @trail, :park_id, :id, :name, :difficulty, :duration, :length, :elevation, :route, :latitude, :longitude, :description, :zoom , :directions
-if trail.photos.attached?
+json.extract! @trail, :park_id, :id, :duration, :name, :difficulty, :length, :elevation, :route, :latitude, :longitude, :description, :zoom , :directions
+json.descriptors @trail.descriptors.map{ |descriptor| descriptor.name}
+json.reviews @trail.reviews.map{ |review| review.id}
+if @trail.photos.attached?
     json.photosUrl @trail.photos.map { |photo| url_for(photo)}
 end
-json.park @trail.park 
-json.review @trail.reviews

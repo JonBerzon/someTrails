@@ -1,8 +1,10 @@
 import { connect } from "react-redux";
 import ReviewForm from "./review_form";
-import { createReview } from "../../actions/review_actions";
+import { createReview, receiveReview } from "../../actions/review_actions";
 import { withRouter } from "react-router";
 import { closeModal } from "../../actions/modal_actions";
+import { fetchTrail } from "../../actions/trail_action";
+import { createConditions } from "../../util/review_conditions_api_util";
 
 const mSTP = (state, ownProps) => ({
     formType: "create",
@@ -12,7 +14,10 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
     action: review => dispatch(createReview(review)),
-    closeModal: () => dispatch(closeModal())
+    action1: review => createConditions(review),
+    closeModal: () => dispatch(closeModal()),
+    fetchTrail: (trailId) => dispatch(fetchTrail(trailId)),
+    receiveReview: review => dispatch(receiveReview(review))
 
 })
 

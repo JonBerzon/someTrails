@@ -25,6 +25,7 @@ class ReviewForm extends React.Component{
         this.activitySwitch = this.activitySwitch.bind(this)
         this.dateSwitch = this.dateSwitch.bind(this)
         this.switchCondition = this.switchCondition.bind(this)
+        this.sendAction = this.sendAction.bind(this)
     }
 
     setRating(newRating){
@@ -41,7 +42,7 @@ class ReviewForm extends React.Component{
 
     changeForm(){
         let newState = this.state;
-        newState.form = 2;
+        newState.form = newState.form === 1 ? 2 : 1;
         newState.review.trail_id = this.props.trail.id
         newState.review.user_id = this.props.user
         this.setState(newState)
@@ -77,6 +78,14 @@ class ReviewForm extends React.Component{
         let a = document.getElementsByClassName("activity-dropdown")
         a[0].classList.add('no-hover')
         // debugger
+    }
+
+    sendAction(){
+        let conditionsArr = ["Great!", "Blowdown", "Bridge Out", "Bugs", "Closed", "Fee", "Flooded", "Icy", "Muddy", "No shade", "Off trail", "Over grown", "Private property", "Rocky", "Scramble", "Snow", "Washed out"]
+        let conditions = this.state.review_conditions.map(cond => conditionsArr.indexOf(cond) + 1)
+        
+        this.props.action(this.state.review).then(resp => this.props.action1({ c: conditions, r: resp.id })).then(resp => this.props.receiveReview(resp)).then(resp => this.props.fetchTrail(resp.review.trail_id))
+        this.props.closeModal()
     }
 
     render(){
@@ -179,8 +188,8 @@ class ReviewForm extends React.Component{
                             </div>
                             <hr id="review-form-bottom-hr"/>
                             <div className="review-form-bottom-buttons">
-                                <p>Back</p>
-                                <span>Post</span>
+                                <p onClick={this.changeForm}>Back</p>
+                                <span onClick={this.sendAction}>Post</span>
                             </div>
                         </div>
                     )

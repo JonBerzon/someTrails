@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :parks, only: [:show, :index]
     resources :trails, only: [:show, :index]
     resources :reviews, only: [:update, :destroy, :create]
+    resources :review_conditions, only: [:create, :destroy]
   end
 end

@@ -64,7 +64,11 @@ class Trail extends React.Component{
     }
 
     openModal(type){
-        this.props.openModal(type)
+        if (this.props.currentUser){
+            this.props.openModal(type)
+        } else {
+            this.props.history.push("/login")
+        }
     }
    
     render() {
@@ -83,6 +87,8 @@ class Trail extends React.Component{
         let avgRating = 0;
         reviews.forEach(review => avgRating += review.rating);
         avgRating = avgRating / reviews.length;
+
+        let sortedReviews = Object.values(reviews).reverse()
 
         return(
             <div className="trail-bg-color">
@@ -160,7 +166,7 @@ class Trail extends React.Component{
                             this.state.selected2 === "reviews" ? (
                                 <div>
                                     {
-                                        Object.values(this.props.reviews).map(review =>{
+                                        sortedReviews.map(review =>{
                                             return <ReviewContainer key={review.id} review={review} />
                                         })
                                     }

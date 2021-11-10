@@ -31,7 +31,8 @@ class Review extends React.Component{
                             <div className="review-stars">
                                 <Stars options={options} rating={rating}/>
                             </div>
-                            <p>{date}</p>
+                            {/* <p>{date}</p> */}
+                            <p>{new Date(date + " 00:00").toString().slice(4,15)}</p>
                         </div>
                     </div>
                 </div>

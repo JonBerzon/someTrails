@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchTrails } from "../../actions/trail_action";
+import { fetchTrail, fetchTrails } from "../../actions/trail_action";
 import { fetchParks } from "../../actions/park_actions";
 import Trail from "./trail";
 import { fetchWeather } from "../../actions/weather_actions"
@@ -12,12 +12,14 @@ const mSTP = (state, ownProps) => ({
     parks: state.entities.parks,
     weather: state.entities.weather,
     reviews: Object.values(state.entities.reviews).filter(review => state.entities.trails[ownProps.match.params.id].reviews.includes(review.id)),
-    totalReviews: state.entities.reviews
+    totalReviews: state.entities.reviews,
+    currentUser: state.session.currentUserId
 })
 
 const mDTP = dispatch => ({
     fetchWeather: (coord) => dispatch(fetchWeather(coord)),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
+    fetchTrail: (trailId) => dispatch(fetchTrail(trailId))
 })
 
 export default connect(mSTP, mDTP)(Trail)
