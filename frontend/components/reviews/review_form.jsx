@@ -13,10 +13,7 @@ class ReviewForm extends React.Component{
                 rating: 0,
                 activity: "Hiking"
             },
-            review_conditions: {
-                review_id: null,
-                condition_id: null
-            },
+            review_conditions: [],
             formType: this.props.formType,
             form: 1,
             activitySwitch: false,
@@ -27,6 +24,7 @@ class ReviewForm extends React.Component{
         this.changeForm = this.changeForm.bind(this)
         this.activitySwitch = this.activitySwitch.bind(this)
         this.dateSwitch = this.dateSwitch.bind(this)
+        this.switchCondition = this.switchCondition.bind(this)
     }
 
     setRating(newRating){
@@ -61,6 +59,17 @@ class ReviewForm extends React.Component{
         this.setState(newState)
     }
 
+    switchCondition(cond){
+        let newState = this.state 
+        if (newState.review_conditions.includes(cond)){
+            let idx = newState.review_conditions.indexOf(cond)
+            newState.review_conditions.splice(idx, 1);
+        } else {
+            newState.review_conditions.push(cond)
+        }
+        this.setState(newState)
+    }
+
     setActivity(act){
         let newState = this.state 
         newState.review.activity = act;
@@ -77,6 +86,7 @@ class ReviewForm extends React.Component{
             edit: true,
         }
         let activityArr = ["Backpacking", "Bird watching", "Bike touring", "Camping", "Cross-country skiing", "Fishing", "Hiking", "Horseback riding", "Mountain biking", "Nature trips", "OHV/Off-road driving", "Paddle sports", "Road biking", "Rock climbing", "Scenic driving", "Snowshoeing", "Skiing", "Running", "Via ferrata", "Walking"]
+        let conditionsArr = ["Great!", "Blowdown", "Bridge Out", "Bugs", "Closed", "Fee", "Flooded", "Icy", "Muddy", "No shade", "Off trail", "Over grown", "Private property", "Rocky", "Scramble", "Snow", "Washed out"]
 
         let {rating, description, activity, date} = this.state.review
 
@@ -141,6 +151,7 @@ class ReviewForm extends React.Component{
                                             </ul>
 
                                         </div>
+                                        <div className="review-form-filler"></div>
                                         <div tabIndex="0" onFocus={this.dateSwitch} onBlur={this.dateSwitch} className="review-form-date-div">
                                         <p>{date}</p>
                                             {
@@ -148,15 +159,32 @@ class ReviewForm extends React.Component{
                                             }
                                     </div>
                                 </div>
-                                
-
+                                <hr className="review-hr"/>
+                                <div className="review-form-trail-conditions">
+                                    <h1>Trail Conditions<span>*</span></h1>
+                                    <div className="review-form-conditions-index">
+                                        {
+                                            conditionsArr.map((cond, idx) =>{
+                                                return(
+                                                    <div className="condition-index-wrapper" key={idx}> 
+                                                        <li 
+                                                        className={this.state.review_conditions.includes(cond) ? "condition-index-selected" : "condition-index-deselected"}
+                                                        onClick={() => this.switchCondition(cond)}
+                                                        >{cond}</li>
+                                                    </div>
+                                            )})
+                                        }
+                                    </div>
+                                </div>
                             </div>
-
+                            <hr id="review-form-bottom-hr"/>
+                            <div className="review-form-bottom-buttons">
+                                <p>Back</p>
+                                <span>Post</span>
+                            </div>
                         </div>
                     )
-                }
-                
-                
+                }         
             </div>
         )
     }
