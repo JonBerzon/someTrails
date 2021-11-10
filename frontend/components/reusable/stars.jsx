@@ -4,17 +4,13 @@ import ReactStars from "react-rating-stars-component"
 
 class Stars extends React.Component{
 
+    ratingChanged = (newRating) => {
+        console.log(newRating)
+    }
+
     render(){
-        // this.props.options ||= {
-        //     size: 15,
-        //     isHalf: true,
-        //     edit: false
-        // }
-        // this.props.rating ||= 4.5
-        let options = this.props.options
-        let rating = this.props.rating
         return(
-            <ReactStars {...options} value={rating} />
+            <ReactStars {...this.props.options} onChange={this.props.onChange} value={this.props.rating} />
         )
     }
 

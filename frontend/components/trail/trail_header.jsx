@@ -1,10 +1,21 @@
 import React from "react";
+import Stars from "../reusable/stars";
 
 
 class TrailHeader extends React.Component{
 
     render(){
-        let {trail, park} = this.props
+        let {trail, park, reviews} = this.props
+
+        let options = {
+            size: 15,
+            isHalf: true,
+            edit: false
+        }
+
+        let rating = 0;
+        reviews.forEach(review => rating += review.rating)
+        rating = rating / reviews.length
         return(
             <div>
                 <div className="trail-header">
@@ -13,7 +24,9 @@ class TrailHeader extends React.Component{
                         <h1>{trail.name}</h1>
                         <div className="trail-picture-stats">
                             <h2 className={trail.difficulty}>{trail.difficulty}</h2>
-                            <img src={window.stars}/>
+                            <div className="trail-head-stars">
+                                <Stars options={options} rating={rating} />
+                            </div>
                             <p>({trail.reviews.length})</p>
                         </div>
                         <h3>{park.name}</h3>

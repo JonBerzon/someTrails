@@ -1,4 +1,5 @@
 import React from "react";
+import Stars from "../reusable/stars";
 
 class Review extends React.Component{
     constructor(props){
@@ -6,8 +7,17 @@ class Review extends React.Component{
     }
 
     render(){
-        let {date, description, activity, conditions} = this.props.review
+        let {date, description, activity, conditions, rating} = this.props.review
         let {fname, lname} = this.props.user
+
+        let options ={
+            size: 15,
+            isHalf: true,
+            edit: false
+        }
+
+
+
         return(
             <div className="review-div">
                 <div className="review-upper-flex">
@@ -17,7 +27,10 @@ class Review extends React.Component{
                     <div className="review-right-div">
                         <h1>{`${fname} ${lname}`}</h1>
                         <div className="review-right-inner-div">
-                            <img src={window.stars}/>
+                            {/* <img src={window.stars}/> */}
+                            <div className="review-stars">
+                                <Stars options={options} rating={rating}/>
+                            </div>
                             <p>{date}</p>
                         </div>
                     </div>
@@ -26,7 +39,7 @@ class Review extends React.Component{
                     <p>{activity}</p>
                     {
                         conditions.map(condition =>{
-                            return <p>{condition}</p>
+                            return <p key={condition}>{condition}</p>
                         })
                     }
                 </div>

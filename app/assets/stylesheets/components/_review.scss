@@ -35,6 +35,7 @@
         font-weight: 100;
         color: #767676;
         font-size: 14px;
+        align-self: flex-end;
     }
 }
 
@@ -77,5 +78,12 @@
     h1{
         font-weight: 500;
         color: #414141;
+    }
+}
+
+.review-stars{
+    margin-right: 4px;
+    span{
+        margin-right: 5px;
     }
 }

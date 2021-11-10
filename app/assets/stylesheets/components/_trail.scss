@@ -97,9 +97,7 @@
 }
 
 .weather-header{
-    height: 60px;
-    background-color: #e6e6e6;
-    margin-top: 20px;
+    
     display: flex;
     // align-items: center;
     h1{
@@ -110,7 +108,33 @@
     font-weight: 500; 
     padding: 18px 0px 18px 0px;
     }
+
+}
+
+.weather-header-div{
+    height: 60px;
+    width: 100%;
+    background-color: #e6e6e6;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
     
+    .weather-header-review{
+        align-self: center;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #428a13;
+        color: white;
+        margin-right: 20px;
+        cursor: pointer;
+        &:hover{
+            background-color: #69a041;
+        }
+    }
+}
+
+.none{
+    display: none;
 }
 
 .trail-nonselected{

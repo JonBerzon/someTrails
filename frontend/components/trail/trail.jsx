@@ -19,6 +19,7 @@ class Trail extends React.Component{
         this.switchSelected = this.switchSelected.bind(this)
         this.switchSelected2 = this.switchSelected2.bind(this)
         this.toTrail = this.toTrail.bind(this)
+        this.openModal = this.openModal.bind(this)
     }
 
     componentDidMount(){
@@ -61,6 +62,10 @@ class Trail extends React.Component{
         window.scrollTo(0, 0)
         this.props.history.push(`/trail/${id}`)
     }
+
+    openModal(type){
+        this.props.openModal(type)
+    }
    
     render() {
         if (!this.props.weather) return null;
@@ -70,17 +75,21 @@ class Trail extends React.Component{
         if (!this.props.parks) return null;
         
 
-        let {trail} = this.props
+        let { trail, weather, reviews } = this.props
         let park = this.props.parks[trail.park_id]
         let arr = [park.country, park.state, park.name, trail.name]
-        let { weather }  = this.props
+        // debugger
+        
+        let avgRating = 0;
+        reviews.forEach(review => avgRating += review.rating);
+        avgRating = avgRating / reviews.length;
 
         return(
             <div className="trail-bg-color">
                 <div className="trail-div">
                     <hr />
                     <BasicHeader arr={arr}/>
-                    <TrailHeader trail={trail} park={park} toPark={this.toPark}/>
+                    <TrailHeader trail={trail} park={park} toPark={this.toPark} reviews={this.props.reviews}/>
                 </div>
                 <div className="trail-lower-container">
                     <div className="trail-lower-left">
@@ -112,13 +121,16 @@ class Trail extends React.Component{
                         </div>
 
 
-                        <div className="weather-header">
-                            <h1 onClick={() => this.switchSelected("weather")}
-                                className={this.state.selected === "weather" ? "trail-selected" : "trail-nonselected"}>
-                                Weather</h1>
-                            <h1 onClick={() => this.switchSelected("daylight")}
-                                className={this.state.selected === "daylight" ? "trail-selected" : "trail-nonselected"}>
-                                Daylight</h1>
+                        <div className="weather-header-div">
+                            <div className="weather-header">
+                                <h1 onClick={() => this.switchSelected("weather")}
+                                    className={this.state.selected === "weather" ? "trail-selected" : "trail-nonselected"}>
+                                    Weather</h1>
+                                <h1 onClick={() => this.switchSelected("daylight")}
+                                    className={this.state.selected === "daylight" ? "trail-selected" : "trail-nonselected"}>
+                                    Daylight</h1>
+                            </div>
+                            
                         </div>
                         {
                             this.state.selected === "weather" ? (
@@ -128,7 +140,8 @@ class Trail extends React.Component{
                             )
                         }
 
-                        <div className="weather-header">
+                        <div className="weather-header-div">
+                            <div className="weather-header">
                             <h1
                                 onClick={() => this.switchSelected2("reviews")}
                                 className={this.state.selected2 === "reviews" ? "trail-selected" : "trail-nonselected"}>
@@ -137,13 +150,18 @@ class Trail extends React.Component{
                                 onClick={() => this.switchSelected2("photos")}
                                 className={this.state.selected2 === "photos" ? "trail-selected" : "trail-nonselected"}>
                                 Photos</h1>
+                            </div>
+                            <div 
+                            onClick={() => this.openModal("create-review")}
+                            className={this.state.selected2 === "reviews" ? "weather-header-review" : "none"}>
+                                Write a Review</div>
                         </div>
                         {
                             this.state.selected2 === "reviews" ? (
                                 <div>
                                     {
                                         Object.values(this.props.reviews).map(review =>{
-                                            if (trail.reviews.includes(review.id)) return <ReviewContainer key={review.id} review={review} />
+                                            return <ReviewContainer key={review.id} review={review} />
                                         })
                                     }
                                     
@@ -191,7 +209,7 @@ class Trail extends React.Component{
                                         } else {
                                             return (
                                                 <div key={trl.id}>
-                                                    <TrailPreview trail={trl} park={park} toTrail={this.toTrail} />
+                                                    <TrailPreview trail={trl} park={park} toTrail={this.toTrail} totalReviews={this.props.totalReviews} />
                                                     <br />
                                                 </div>
                                             )

@@ -10,10 +10,12 @@ import ProfileContainer from "./profile/profile_container";
 import ParkContainer from "./park/park_container";
 import SplashContainer from "./splash/splash_container";
 import TrailContainer from "./trail/trail_container";
+import Modal from "./modal/modal";
 
 
 const App = () => (
     <div>
+        <Modal />
         <NavbarContainer />
         <Switch>
             <AuthRoute path="/signup" component={SignupContainer} />
