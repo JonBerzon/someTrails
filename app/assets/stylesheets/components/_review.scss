@@ -88,3 +88,27 @@
         margin-right: 5px;
     }
 }
+
+.review-current-user-buttons{
+    display: flex;
+    margin-top: 10px;
+    span{
+        margin-top: 6px;
+        margin-left: 5px;
+        margin-right: 5px;
+        color: #69a041;
+        font-size: 14px;
+    }
+    p{
+        color: #428a13;
+        font-size: 14px;
+        cursor: pointer;
+
+        &:hover{
+            color: #69a041;
+        }
+    }
+    
+
+    
+}

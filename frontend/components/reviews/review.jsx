@@ -6,8 +6,9 @@ class Review extends React.Component{
         super(props)
     }
 
+
     render(){
-        let {date, description, activity, conditions, rating} = this.props.review
+        let {date, description, activity, conditions, rating, user_id, id} = this.props.review
         let {fname, lname} = this.props.user
 
         let options ={
@@ -46,6 +47,17 @@ class Review extends React.Component{
                 </div>
                 <div className="review-description">
                     <p>{description}</p>
+                    {
+                        this.props.currentUser === user_id ? (
+                            <div className="review-current-user-buttons">
+                                <p onClick={() => this.props.deleteReview(id)}>Delete</p>
+                                <span> | </span>
+                                <p onClick={()=> this.props.openModal({type:"edit-review", other: this.props.review})}>Edit</p>
+                            </div>
+                        ) : (
+                            null
+                        )
+                    }
                 </div>
             <hr />
             </div>

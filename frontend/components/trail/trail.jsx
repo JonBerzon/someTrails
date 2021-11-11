@@ -7,6 +7,7 @@ import TrailPreview from "./trail_preview";
 import Weather from "../reusable/weather";
 import Daylight from "../reusable/daylight";
 import ReviewContainer from "../reviews/review_container";
+import { faGrinTongueSquint } from "@fortawesome/free-solid-svg-icons";
 
 class Trail extends React.Component{
     constructor(props){
@@ -20,6 +21,7 @@ class Trail extends React.Component{
         this.switchSelected2 = this.switchSelected2.bind(this)
         this.toTrail = this.toTrail.bind(this)
         this.openModal = this.openModal.bind(this)
+        this.deleteReview = this.deleteReview.bind(this)
     }
 
     componentDidMount(){
@@ -69,6 +71,12 @@ class Trail extends React.Component{
         } else {
             this.props.history.push("/login")
         }
+    }
+
+    deleteReview(id){
+        this.props.deleteReview(id).then(resp => this.props.fetchTrail(resp.review))
+        // this.props.deleteReview(id).then(resp => console.log(resp))
+
     }
    
     render() {
@@ -158,7 +166,7 @@ class Trail extends React.Component{
                                 Photos</h1>
                             </div>
                             <div 
-                            onClick={() => this.openModal("create-review")}
+                            onClick={() => this.openModal({type: "create-review"})}
                             className={this.state.selected2 === "reviews" ? "weather-header-review" : "none"}>
                                 Write a Review</div>
                         </div>
@@ -167,7 +175,7 @@ class Trail extends React.Component{
                                 <div>
                                     {
                                         sortedReviews.map(review =>{
-                                            return <ReviewContainer key={review.id} review={review} />
+                                            return <ReviewContainer key={review.id} review={review} deleteReview={this.deleteReview} openModal={this.openModal} currentUser={this.props.currentUser}/>
                                         })
                                     }
                                     

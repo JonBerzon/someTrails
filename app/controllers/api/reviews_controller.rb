@@ -13,7 +13,7 @@ class Api::ReviewsController < ApplicationController
 
     def update
         @review = Review.find(params[:id])
-        if @review.update(user_params)
+        if @review.update(review_params)
             render :show
         else
             render json: @review.errors.full_messages, status: 401
@@ -23,7 +23,8 @@ class Api::ReviewsController < ApplicationController
     def destroy
         @review = Review.find(params[:id])
         if @review
-            @review.destroy   
+            @review.destroy
+            render json: @review.trail_id   
         else
             render json: ["Review cannot be destroyed."]
         end

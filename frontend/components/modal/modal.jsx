@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateReviewContainer from '../reviews/create_review_container';
+import EditReviewContainer from '../reviews/edit_review_container';
 
 
 function Modal({ modal, closeModal }) {
@@ -9,9 +10,12 @@ function Modal({ modal, closeModal }) {
         return null;
     }
     let component;
-    switch (modal) {
+    switch (modal.type) {
         case 'create-review':
             component = <CreateReviewContainer />
+            break;
+        case 'edit-review':
+            component = <EditReviewContainer review={modal.other}/>
             break;
           
         default:

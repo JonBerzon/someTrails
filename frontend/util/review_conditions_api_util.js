@@ -5,3 +5,11 @@ export const createConditions = conditions => {
         data: {conditions}
     })
 }
+
+export const updateConditions = conditions => {
+    return $.ajax({
+        method: "PATCH",
+        url: `api/review_conditions/1`,
+        data: {conditions}
+    })
+}

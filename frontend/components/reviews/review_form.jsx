@@ -5,15 +5,8 @@ class ReviewForm extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            review: {
-                user_id: null,
-                trail_id: null,
-                date: new Date().toString().slice(4, 15),
-                description: "",
-                rating: 0,
-                activity: "Hiking"
-            },
-            review_conditions: [],
+            review: this.props.review,
+            review_conditions: this.props.review_conditions,
             formType: this.props.formType,
             form: 1,
             activitySwitch: false,
@@ -81,11 +74,24 @@ class ReviewForm extends React.Component{
     }
 
     sendAction(){
-        let conditionsArr = ["Great!", "Blowdown", "Bridge Out", "Bugs", "Closed", "Fee", "Flooded", "Icy", "Muddy", "No shade", "Off trail", "Over grown", "Private property", "Rocky", "Scramble", "Snow", "Washed out"]
+        let conditionsArr = ["Great!", "Blowdown", "Bridge out", "Bugs", "Closed", "Fee", "Flooded", "Icy", "Muddy", "No shade", "Off trail", "Overgrown", "Private property", "Rocky", "Scramble", "Snow", "Washed out"]
         let conditions = this.state.review_conditions.map(cond => conditionsArr.indexOf(cond) + 1)
-        
-        this.props.action(this.state.review).then(resp => this.props.action1({ c: conditions, r: resp.id })).then(resp => this.props.receiveReview(resp)).then(resp => this.props.fetchTrail(resp.review.trail_id))
+        if (this.props.formType === "edit"){
+            this.props.action(this.state.review).then(resp => this.props.action1({ c: conditions, r: this.props.review.id })).then(resp => this.props.receiveReview(resp)).then(resp => this.props.fetchTrail(resp.review.trail_id))
+        } else {
+            this.props.action(this.state.review).then(resp => this.props.action1({ c: conditions, r: resp.id })).then(resp => this.props.receiveReview(resp)).then(resp => this.props.fetchTrail(resp.review.trail_id))
+
+        }
         this.props.closeModal()
+    }
+
+    componentWillUnmount(){
+        console.log(this.props.review_conditions)
+        this.setState({
+            review: this.props.review,
+            review_conditions: this.props.review_conditions
+        })
+        
     }
 
     render(){
@@ -95,7 +101,7 @@ class ReviewForm extends React.Component{
             edit: true,
         }
         let activityArr = ["Backpacking", "Bird watching", "Bike touring", "Camping", "Cross-country skiing", "Fishing", "Hiking", "Horseback riding", "Mountain biking", "Nature trips", "OHV/Off-road driving", "Paddle sports", "Road biking", "Rock climbing", "Scenic driving", "Snowshoeing", "Skiing", "Running", "Via ferrata", "Walking"]
-        let conditionsArr = ["Great!", "Blowdown", "Bridge Out", "Bugs", "Closed", "Fee", "Flooded", "Icy", "Muddy", "No shade", "Off trail", "Over grown", "Private property", "Rocky", "Scramble", "Snow", "Washed out"]
+        let conditionsArr = ["Great!", "Blowdown", "Bridge out", "Bugs", "Closed", "Fee", "Flooded", "Icy", "Muddy", "No shade", "Off trail", "Overgrown", "Private property", "Rocky", "Scramble", "Snow", "Washed out"]
 
         let {rating, description, activity, date} = this.state.review
 
