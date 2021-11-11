@@ -211,3 +211,10 @@
     margin-top: 20px;
     margin-bottom: 24px;
 }
+
+.remove-hr > div:last-child{
+    hr{
+        display: none;
+    }
+    margin-bottom: 20px;
+}

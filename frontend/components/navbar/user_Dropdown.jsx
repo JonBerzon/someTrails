@@ -22,7 +22,7 @@ class UserDropdown extends React.Component{
                 </div>
                 
                 <ul className="icon-dropdown">  
-                    <li onClick={this.props.redirectProfile}>Profile</li>  
+                    {/* <li onClick={this.props.redirectProfile}>Profile</li>   */} {/* removed for presentation */}
                     <li onClick={this.props.handleLogout}>Logout</li>
                 </ul>
             </div>

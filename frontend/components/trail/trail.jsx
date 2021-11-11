@@ -160,10 +160,10 @@ class Trail extends React.Component{
                                 onClick={() => this.switchSelected2("reviews")}
                                 className={this.state.selected2 === "reviews" ? "trail-selected" : "trail-nonselected"}>
                                 Reviews</h1>
-                            <h1
+                            {/* <h1
                                 onClick={() => this.switchSelected2("photos")}
                                 className={this.state.selected2 === "photos" ? "trail-selected" : "trail-nonselected"}>
-                                Photos</h1>
+                                Photos</h1> */} {/* removed for presentation */}
                             </div>
                             <div 
                             onClick={() => this.openModal({type: "create-review"})}
@@ -172,7 +172,7 @@ class Trail extends React.Component{
                         </div>
                         {
                             this.state.selected2 === "reviews" ? (
-                                <div>
+                                <div className="remove-hr">
                                     {
                                         sortedReviews.map(review =>{
                                             return <ReviewContainer key={review.id} review={review} deleteReview={this.deleteReview} openModal={this.openModal} currentUser={this.props.currentUser}/>
