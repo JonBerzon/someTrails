@@ -131,7 +131,7 @@ class Park extends React.Component{
                     </div>
                 </div>
                 <div className="park-bottom-trails">
-                    <h1 >Top Trails (222)</h1>
+                    <h1 >Top Trails ({park.trails.length})</h1>
                     {Object.values(trails).map((trail, idx)=>{
                         return (
                             <div key={ trail.id }>
