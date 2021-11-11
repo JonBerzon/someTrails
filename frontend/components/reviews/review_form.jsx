@@ -135,7 +135,7 @@ class ReviewForm extends React.Component{
                             <hr />
                             {
                                 rating && description ? (
-                                    <div onClick={this.changeForm} className="review-form-next-div-on"><span>Next</span></div >
+                                    <div className="review-form-next-div-on"><span onClick={this.changeForm} >Next</span></div >
                                 ) : (
                                     <div className="review-form-next-div-off"><span>Next</span></div >
 

@@ -3,14 +3,24 @@ import ReactStars from "react-rating-stars-component"
 
 
 class Stars extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            options: this.props.options,
+            onChange: this.props.onChange,
+            rating: this.props.rating
+        }
+    }
 
-    ratingChanged = (newRating) => {
-        console.log(newRating)
+    componentDidUpdate(prevProps){
+        if (this.props.rating !== prevProps.rating){
+            this.setState({rating: this.props.rating})
+        }
     }
 
     render(){
         return(
-            <ReactStars {...this.props.options} onChange={this.props.onChange} value={this.props.rating} />
+            <ReactStars {...this.state.options} onChange={this.state.onChange} value={this.state.rating} />
         )
     }
 
