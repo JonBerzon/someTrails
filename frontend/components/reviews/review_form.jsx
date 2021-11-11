@@ -1,4 +1,5 @@
 import React from "react";
+import Cal from "../reusable/calendar";
 import Stars from "../reusable/stars"
 
 class ReviewForm extends React.Component{
@@ -19,6 +20,7 @@ class ReviewForm extends React.Component{
         this.dateSwitch = this.dateSwitch.bind(this)
         this.switchCondition = this.switchCondition.bind(this)
         this.sendAction = this.sendAction.bind(this)
+        this.changeDate = this.changeDate.bind(this)
     }
 
     setRating(newRating){
@@ -83,6 +85,12 @@ class ReviewForm extends React.Component{
 
         }
         this.props.closeModal()
+    }
+
+    changeDate(date){
+        let newState = this.state
+        newState.review.date = new Date(date).toString().slice(4, 15),
+        this.setState({newState})
     }
 
     componentWillUnmount(){
@@ -168,11 +176,12 @@ class ReviewForm extends React.Component{
                                         </div>
                                         <div className="review-form-filler"></div>
                                         <div tabIndex="0" onFocus={this.dateSwitch} onBlur={this.dateSwitch} className="review-form-date-div">
-                                        <p>{date}</p>
-                                            {
-                                                this.state.dateSwitch === true ? <img className="flip" src={window.greenDropdown} /> : <img src={window.dropdown} />
-                                            }
-                                    </div>
+                                            <p>{date}</p>
+                                                {
+                                                    this.state.dateSwitch === true ? <img className="flip" src={window.greenDropdown} /> : <img src={window.dropdown} />
+                                                }
+                                                <Cal value={date} func={this.changeDate}/>
+                                        </div>
                                 </div>
                                 <hr className="review-hr"/>
                                 <div className="review-form-trail-conditions">

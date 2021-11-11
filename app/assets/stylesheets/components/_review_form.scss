@@ -1,5 +1,7 @@
 @import "../base/fonts.scss";
 
+
+
 .review-form-div{
     height: 550px;
     width: 550px;
@@ -233,6 +235,7 @@
     color: #414141;
     font-weight: 100;
     cursor: pointer;
+    position: relative;
     p{
         padding-left: 10px;
     }
@@ -243,6 +246,11 @@
         p{
             color: #69a041;
         }
+    }
+    img{
+        padding-right: 5px;
+        height: 20px;
+        width: auto;
     }
 }
 
@@ -334,5 +342,35 @@
             background-color: #69a041;
         }
     }
+
+}
+
+
+
+.calendar{
+    position: absolute;
+    top: 55px;
+    left: -90px;
+    width: 250px;
+    display: none;
+
+    &:hover{
+        display: block;
+    }
+}
+
+.review-form-date-div{
+    &:focus{
+        .calendar{
+            display: block;
+        }
+    }
+}
+
+.react-calendar{
+    border: 0px solid;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+
+
 
 }
