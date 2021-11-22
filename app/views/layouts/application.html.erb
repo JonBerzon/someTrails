@@ -6,6 +6,17 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta property="og:title" content="Some Trails" />
+    <meta property='og:image' content="<%= image_url('preview.png') %>"/>
+    <meta property="og:description"
+      content="Some Trails is a full stack clone of All Trails utilizing a Ruby on Rails backend, PostgreSQL database, and React/Redux based frontend."
+    />
+    <meta property="og:url"
+      content="https://sometrails.herokuapp.com/#/"
+    />
+
+
+
     <% if current_user%>
       <script>
         window.currentUser = {
