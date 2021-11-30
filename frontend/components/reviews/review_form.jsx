@@ -72,7 +72,7 @@ class ReviewForm extends React.Component{
         this.setState(newState)
         let a = document.getElementsByClassName("activity-dropdown")
         a[0].classList.add('no-hover')
-        // debugger
+       
     }
 
     sendAction(){
@@ -94,7 +94,6 @@ class ReviewForm extends React.Component{
     }
 
     componentWillUnmount(){
-        console.log(this.props.review_conditions)
         this.setState({
             review: this.props.review,
             review_conditions: this.props.review_conditions
@@ -113,7 +112,6 @@ class ReviewForm extends React.Component{
 
         let {rating, description, activity, date} = this.state.review
 
-        console.log(this.state)
         return(
             
             <div className="review-form-div">

@@ -75,7 +75,6 @@ class Trail extends React.Component{
 
     deleteReview(id){
         this.props.deleteReview(id).then(resp => this.props.fetchTrail(resp.review))
-        // this.props.deleteReview(id).then(resp => console.log(resp))
 
     }
    
@@ -90,7 +89,6 @@ class Trail extends React.Component{
         let { trail, weather, reviews } = this.props
         let park = this.props.parks[trail.park_id]
         let arr = [park.country, park.state, park.name, trail.name]
-        // debugger
         
         let avgRating = 0;
         reviews.forEach(review => avgRating += review.rating);

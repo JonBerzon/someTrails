@@ -22,10 +22,6 @@ class Cal extends React.Component{
         this.test = this.test.bind(this)
     }
 
-    test(resp){
-        console.log(resp)
-    }
-
     render(){
         return(
             <div className="calendar">

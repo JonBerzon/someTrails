@@ -35,9 +35,6 @@ class Api::ReviewConditionsController < ApplicationController
 
         render 'api/reviews/show'
     
-    
-
-        # debugger
     end
 
 

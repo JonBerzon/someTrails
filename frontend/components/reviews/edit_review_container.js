@@ -8,7 +8,7 @@ import { createConditions, updateConditions } from "../../util/review_conditions
 
 const mSTP = (state, ownProps) => {
     let test = ownProps.review.conditions.slice()
-    // debugger
+  
     return{
     review: {
         id: ownProps.review.id,

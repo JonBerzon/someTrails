@@ -34,7 +34,7 @@ class Searchbar extends React.Component{
 
     render(){
         if (!this.props.trails || !this.props.parks) return null;
-        // debugger
+        
         return(
             <div>
                 <div className="searchbar-div">

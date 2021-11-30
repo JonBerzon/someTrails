@@ -40,7 +40,7 @@ class Profile extends React.Component{
         let { active} = this.state
         let { currentUser, currentProfile } = this.props
         let arr = ["Members", `${currentProfile.fname}`]
-        // debugger
+        
         let rating = 4;
 
         
