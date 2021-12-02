@@ -6,6 +6,7 @@
 # Overview
 SomeTrails is an AllTrails clone which lets you browse available parks and trails through their associated page. Each park page contains a list of available hikes and a brief overview of said hikes, location and direction details for the park, and a summary about the park. Trail pages include more specific data such as specific trail location, statistics about the hike, current and future weather data along with sunrise and sunset times, reviews, and a list of nearby trails.
 
+# Technologies Used
 The backend for SomeTrails was built using Ruby on Rails, PostgreSQL for the database, and AWS S3 storage for trail-image associations. The frontend was built using React, Redux, and SCSS. The site uses the Google Maps API (https://developers.google.com/maps) to display Park and Hike locations, and the Weather API (https://www.weatherapi.com/docs/) to display up to date weather forecasts for trails along with the sunrise and sunset data.
 
 # Features
