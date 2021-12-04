@@ -19,7 +19,6 @@ class Cal extends React.Component{
 
     constructor(props){
         super(props)
-        this.test = this.test.bind(this)
     }
 
     render(){
