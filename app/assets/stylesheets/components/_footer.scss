@@ -17,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .footer-flex{
@@ -43,4 +44,11 @@
 .linked-logo{
     height: 30px;
     width: auto;
+}
+
+.copyright{
+    font-size: 14px;
+    width: 80%;
+    align-self: center;
+    text-align: right;
 }
